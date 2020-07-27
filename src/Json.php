@@ -6,8 +6,10 @@ namespace Arokettu\Json;
 
 final class Json
 {
-    public const DECODE_DEFAULT = JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE;
-    public const DECODE_PRETTY  = self::DECODE_DEFAULT | JSON_PRETTY_PRINT;
+    public const ENCODE_DEFAULT = JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE;
+    public const ENCODE_PRETTY  = self::ENCODE_DEFAULT | JSON_PRETTY_PRINT;
+
+    public const DECODE_DEFAULT = 0;
 
     /**
      * @param mixed $value
@@ -16,8 +18,10 @@ final class Json
      * @return string
      * @throws \JsonException
      */
-    public static function encode($value, int $options = 0, int $depth = 512): string
+    public static function encode($value, int $options = self::ENCODE_DEFAULT, int $depth = 512): string
     {
+        $options |= JSON_THROW_ON_ERROR;    // force throwing exceptions
+
         return json_encode($value, $options, $depth);
     }
 

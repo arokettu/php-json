@@ -34,6 +34,7 @@ class DecodeTest extends TestCase
     public function testException()
     {
         $this->expectException(\JsonException::class);
+
         Json::decode('{');
     }
 
