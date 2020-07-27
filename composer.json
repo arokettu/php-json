@@ -18,6 +18,11 @@
             "Arokettu\\Json\\": "src"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Arokettu\\Json\\Tests\\": "tests"
+        }
+    },
     "require": {
         "php": "^7.3 || ^8.0",
         "ext-json": "*"
