@@ -1,7 +1,7 @@
 # JSON
 
 [![Packagist](https://img.shields.io/packagist/v/arokettu/json.svg)](https://packagist.org/packages/arokettu/json)
-[![Packagist](https://img.shields.io/github/license/arokettu/json.svg)](https://opensource.org/licenses/MIT)
+[![Packagist](https://img.shields.io/packagist/l/arokettu/json.svg)](https://opensource.org/licenses/MIT)
 [![Travis](https://img.shields.io/travis/arokettu/json.svg)](https://travis-ci.org/arokettu/json)
 
 A wrapper for the standard ext-json with sane defaults
