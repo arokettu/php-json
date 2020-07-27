@@ -34,7 +34,7 @@ Read full documentation here: <https://sandfox.dev/php/json.html>
 
 ## Support
 
-Please file issues on our main repo at GitLab: <https://gitlab.com/sandfox/json/-/issues>
+Please file issues on our main repo at GitLab: <https://gitlab.com/sandfox/php-json/-/issues>
 
 ## License
 
