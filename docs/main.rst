@@ -24,6 +24,7 @@ Main features:
 
 * ``JSON_THROW_ON_ERROR`` is enforced
 * Two convenience constants:
+
     * ``\Arokettu\Json\Json::ENCODE_DEFAULT = JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE``
     * ``\Arokettu\Json\Json::ENCODE_PRETTY = JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT``
 
