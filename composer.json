@@ -1,0 +1,33 @@
+{
+    "name": "arokettu/json",
+    "description": "ext-json wrapper with sane defaults",
+    "keywords": ["json"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Anton Smirnov",
+            "email": "sandfox@sandfox.me"
+        }
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Arokettu\\Json\\": "src"
+        }
+    },
+    "require": {
+        "php": "^7.3 || ^8.0",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "*",
+        "phpcompatibility/php-compatibility": "*",
+        "phpunit/phpunit": "^9.2",
+        "psy/psysh": "*",
+        "slevomat/coding-standard": "*",
+        "squizlabs/php_codesniffer": "*"
+    }
+}
