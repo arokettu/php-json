@@ -39,8 +39,22 @@ Decoding
 Main features:
 
 * ``JSON_THROW_ON_ERROR`` is enforced
-* ``JSON_OBJECT_AS_ARRAY`` is ignored
-* JSON objects are decoded to instances of ``ArrayObject`` instead of ``stdClass`` or array
+* Pass ``JSON_OBJECT_AS_ARRAY`` to get associative arrays
+* JSON objects are decoded to instances of ``ArrayObject`` instead of ``stdClass`` when parsed as objects
+
+.. code-block:: php
+
+    <?php
+    function \Arokettu\Json\Json::decodeToArray(string $json, int $options = 0, int $depth = 512): mixed;
+
+Force decoding objects as associative arrays
+
+.. code-block:: php
+
+    <?php
+    function \Arokettu\Json\Json::decodeToObject(string $json, int $options = 0, int $depth = 512): mixed;
+
+Force decoding objects as instances of ``ArrayObject``
 
 License
 =======
