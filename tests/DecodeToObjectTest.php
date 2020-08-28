@@ -7,24 +7,32 @@ namespace Arokettu\Json\Tests;
 use Arokettu\Json\Json;
 use PHPUnit\Framework\TestCase;
 
-class DecodeTest extends TestCase
+class DecodeToObjectTest extends TestCase
 {
+    public function testParams()
+    {
+        // get object when not passing param
+        $this->assertInstanceOf(\ArrayObject::class, Json::decode('{}'));
+        // get object with decodeToObject even with param
+        $this->assertInstanceOf(\ArrayObject::class, Json::decodeToObject('{}', JSON_OBJECT_AS_ARRAY));
+    }
+
     public function testScalar()
     {
-        $this->assertEquals('test', Json::decode('"test"'));
-        $this->assertEquals(123, Json::decode('123'));
-        $this->assertEquals(null, Json::decode('null'));
-        $this->assertEquals(false, Json::decode('false'));
+        $this->assertEquals('test', Json::decodeToObject('"test"'));
+        $this->assertEquals(123, Json::decodeToObject('123'));
+        $this->assertEquals(null, Json::decodeToObject('null'));
+        $this->assertEquals(false, Json::decodeToObject('false'));
     }
 
     public function testArray()
     {
-        $this->assertEquals([1, 2, 3, "4"], Json::decode('[1,2,3,"4"]'));
+        $this->assertEquals([1, 2, 3, "4"], Json::decodeToObject('[1,2,3,"4"]'));
     }
 
     public function testObject()
     {
-        $obj = Json::decode('{"aaa": 123, "bbb": "abc"}');
+        $obj = Json::decodeToObject('{"aaa": 123, "bbb": "abc"}');
 
         $this->assertInstanceOf(\ArrayObject::class, $obj);
         $this->assertCount(2, $obj);
@@ -35,12 +43,12 @@ class DecodeTest extends TestCase
     {
         $this->expectException(\JsonException::class);
 
-        Json::decode('{');
+        Json::decodeToObject('{');
     }
 
     public function testAssocIgnored()
     {
-        $obj = Json::decode('{"aaa": 123, "bbb": "abc"}', JSON_OBJECT_AS_ARRAY);
+        $obj = Json::decodeToObject('{"aaa": 123, "bbb": "abc"}', JSON_OBJECT_AS_ARRAY);
 
         $this->assertInstanceOf(\ArrayObject::class, $obj);
     }
@@ -61,7 +69,7 @@ class DecodeTest extends TestCase
             ]
             JSON;
 
-        $decoded = Json::decode($json);
+        $decoded = Json::decodeToObject($json);
 
         $this->assertIsArray($decoded);
         $this->assertInstanceOf(\ArrayObject::class, $decoded[0]);

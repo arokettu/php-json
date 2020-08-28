@@ -35,15 +35,43 @@ final class Json
     public static function decode(string $json, int $options = self::DECODE_DEFAULT, int $depth = 512)
     {
         $options |= JSON_THROW_ON_ERROR;    // force throwing exceptions
-        $options &= ~JSON_OBJECT_AS_ARRAY;  // do not pass object as array
 
-        $decoded = json_decode($json, false, $depth, $options);
+        $decoded = json_decode($json, null, $depth, $options);
 
         if (is_array($decoded) || is_object($decoded)) {
             $decoded = self::objectToArrayObject($decoded);
         }
 
         return $decoded;
+    }
+
+    /**
+     * @param string $json
+     * @param int $options
+     * @param int $depth
+     * @return mixed
+     * @throws \JsonException
+     */
+    public static function decodeToObject(string $json, int $options = self::DECODE_DEFAULT, int $depth = 512)
+    {
+        $options &= ~JSON_OBJECT_AS_ARRAY;  // do not pass object as array
+
+        return self::decode($json, $options, $depth);
+    }
+
+    /**
+     * @param string $json
+     * @param int $options
+     * @param int $depth
+     * @return mixed
+     * @throws \JsonException
+     */
+    public static function decodeToArray(string $json, int $options = self::DECODE_DEFAULT, int $depth = 512)
+    {
+        $options |= JSON_THROW_ON_ERROR;    // force throwing exceptions
+        $options |= JSON_OBJECT_AS_ARRAY;   // force object as array
+
+        return json_decode($json, null, $depth, $options);
     }
 
     /**
