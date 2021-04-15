@@ -2,8 +2,8 @@
 
 [![Packagist](https://img.shields.io/packagist/v/arokettu/json.svg?style=flat-square)](https://packagist.org/packages/arokettu/json)
 [![Packagist](https://img.shields.io/packagist/l/arokettu/json.svg?style=flat-square)](https://opensource.org/licenses/MIT)
-[![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/sandfox/php-json/master.svg?style=flat-square)](https://gitlab.com/sandfox/bencode/-/pipelines)
-[![Codecov](https://img.shields.io/codecov/c/gl/sandfox/php-json?style=flat-square)](https://codecov.io/gl/sandfox/bencode/)
+[![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/sandfox/php-json/master.svg?style=flat-square)](https://gitlab.com/sandfox/php-json/-/pipelines)
+[![Codecov](https://img.shields.io/codecov/c/gl/sandfox/php-json?style=flat-square)](https://codecov.io/gl/sandfox/php-json/)
 
 
 A wrapper for the standard ext-json with sane defaults
