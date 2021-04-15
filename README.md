@@ -1,8 +1,8 @@
 # JSON
 
-[![Packagist](https://img.shields.io/packagist/v/arokettu/json.svg)](https://packagist.org/packages/arokettu/json)
-[![Packagist](https://img.shields.io/packagist/l/arokettu/json.svg)](https://opensource.org/licenses/MIT)
-[![Travis](https://img.shields.io/travis/arokettu/php-json.svg)](https://travis-ci.org/arokettu/php-json)
+[![Packagist](https://img.shields.io/packagist/v/arokettu/json.svg?style=flat-square)](https://packagist.org/packages/arokettu/json)
+[![Packagist](https://img.shields.io/packagist/l/arokettu/json.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![Travis](https://img.shields.io/travis/arokettu/php-json.svg?style=flat-square)](https://travis-ci.org/arokettu/php-json)
 
 A wrapper for the standard ext-json with sane defaults
 
