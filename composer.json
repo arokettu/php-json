@@ -4,12 +4,20 @@
     "keywords": ["json"],
     "type": "library",
     "license": "MIT",
+    "homepage": "https://sandfox.dev/php/json.html",
     "authors": [
         {
             "name": "Anton Smirnov",
-            "email": "sandfox@sandfox.me"
+            "email": "sandfox@sandfox.me",
+            "role": "developer",
+            "homepage": "https://sandfox.me/"
         }
     ],
+    "support": {
+        "issues": "https://gitlab.com/sandfox/php-json/-/issues",
+        "source": "https://gitlab.com/sandfox/php-json",
+        "docs": "https://arokettu-json.readthedocs.io/"
+    },
     "config": {
         "sort-packages": true
     },
