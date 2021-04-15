@@ -2,7 +2,9 @@
 
 [![Packagist](https://img.shields.io/packagist/v/arokettu/json.svg?style=flat-square)](https://packagist.org/packages/arokettu/json)
 [![Packagist](https://img.shields.io/packagist/l/arokettu/json.svg?style=flat-square)](https://opensource.org/licenses/MIT)
-[![Travis](https://img.shields.io/travis/arokettu/php-json.svg?style=flat-square)](https://travis-ci.org/arokettu/php-json)
+[![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/sandfox/php-json/master.svg?style=flat-square)](https://gitlab.com/sandfox/bencode/-/pipelines)
+[![Codecov](https://img.shields.io/codecov/c/gl/sandfox/php-json?style=flat-square)](https://codecov.io/gl/sandfox/bencode/)
+
 
 A wrapper for the standard ext-json with sane defaults
 
@@ -31,6 +33,8 @@ composer require 'arokettu/json'
 ## Documentation
 
 Read full documentation here: <https://sandfox.dev/php/json.html>
+
+Also on Read the Docs: <https://arokettu-json.readthedocs.io/>
 
 ## Support
 
