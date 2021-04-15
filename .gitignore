@@ -1,6 +1,9 @@
 # ide
 /.idea
 
+# phpunit
+/.phpunit.result.cache
+
 # composer
 /vendor/
 /composer.lock
