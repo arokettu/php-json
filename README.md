@@ -5,8 +5,11 @@
 [![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/sandfox/php-json/master.svg?style=flat-square)](https://gitlab.com/sandfox/php-json/-/pipelines)
 [![Codecov](https://img.shields.io/codecov/c/gl/sandfox/php-json?style=flat-square)](https://codecov.io/gl/sandfox/php-json/)
 
-
 A wrapper for the standard ext-json with sane defaults
+
+## Features
+
+### Decoding wrapper
 
 Decoding wrapper is the main purpose of the library.
 It's killer feature is that JSON objects become instances of ArrayObject instead of stdClass.
@@ -22,6 +25,32 @@ unset($obj['abc']);
 
 // object will not turn into array
 echo \Arokettu\Json\Json::encode($obj);
+```
+
+### Options objects
+
+OOP interface for json parameters: ``EncodeOptions`` and ``DecodeOptions``
+
+```php
+<?php
+
+use Arokettu\Json\EncodeOptions;
+
+// set options with methods
+$options = EncodeOptions::build()
+    ->withThrowOnError()
+    ->withHexAmp();
+// set options with PHP 8 named params (both camel case and snake case names can be used)
+$options = EncodeOptions::build(
+    throw_on_error: true,   // apply JSON_THROW_ON_ERROR 
+    hexAmp: true,           // apply JSON_HEX_AMP 
+);
+// use both with this library and with the base function
+$value = \Arokettu\Json\Json::encode($json, $options);
+$value = json_encode($json, $options->value()); 
+// pretty print existing options mix
+echo EncodeOptions::build(4194752)->toString();
+// will get you 'JSON_THROW_ON_ERROR | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT'
 ```
 
 ## Installation
