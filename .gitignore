@@ -3,6 +3,10 @@
 
 # phpunit
 /.phpunit.result.cache
+/reports
+
+# docs
+/docs/*.html
 
 # composer
 /vendor/
