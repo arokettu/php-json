@@ -13,13 +13,20 @@ final class Json
 
     /**
      * @param mixed $value
-     * @param int $options
+     * @param int|EncodeOptions $options
      * @param int $depth
      * @return string
      * @throws \JsonException
      */
-    public static function encode($value, int $options = self::ENCODE_DEFAULT, int $depth = 512): string
+    public static function encode($value, $options = self::ENCODE_DEFAULT, int $depth = 512): string
     {
+        if ($options instanceof EncodeOptions) {
+            $options = $options->value();
+        }
+        if (!is_int($options)) {
+            throw new \InvalidArgumentException('$options must be an integer or an instance of EncodeOptions');
+        }
+
         $options |= JSON_THROW_ON_ERROR;    // force throwing exceptions
 
         return json_encode($value, $options, $depth);
@@ -27,13 +34,20 @@ final class Json
 
     /**
      * @param string $json
-     * @param int $options
+     * @param int|DecodeOptions $options
      * @param int $depth
      * @return mixed
      * @throws \JsonException
      */
-    public static function decode(string $json, int $options = self::DECODE_DEFAULT, int $depth = 512)
+    public static function decode(string $json, $options = self::DECODE_DEFAULT, int $depth = 512)
     {
+        if ($options instanceof DecodeOptions) {
+            $options = $options->value();
+        }
+        if (!is_int($options)) {
+            throw new \InvalidArgumentException('$options must be an integer or an instance of DecodeOptions');
+        }
+
         $options |= JSON_THROW_ON_ERROR;    // force throwing exceptions
 
         $decoded = json_decode($json, null, $depth, $options);
@@ -47,13 +61,20 @@ final class Json
 
     /**
      * @param string $json
-     * @param int $options
+     * @param int|DecodeOptions $options
      * @param int $depth
      * @return mixed
      * @throws \JsonException
      */
-    public static function decodeToObject(string $json, int $options = self::DECODE_DEFAULT, int $depth = 512)
+    public static function decodeToObject(string $json, $options = self::DECODE_DEFAULT, int $depth = 512)
     {
+        if ($options instanceof DecodeOptions) {
+            $options = $options->value();
+        }
+        if (!is_int($options)) {
+            throw new \InvalidArgumentException('$options must be an integer or an instance of DecodeOptions');
+        }
+
         $options &= ~JSON_OBJECT_AS_ARRAY;  // do not pass object as array
 
         return self::decode($json, $options, $depth);
@@ -61,13 +82,20 @@ final class Json
 
     /**
      * @param string $json
-     * @param int $options
+     * @param int|DecodeOptions $options
      * @param int $depth
      * @return mixed
      * @throws \JsonException
      */
-    public static function decodeToArray(string $json, int $options = self::DECODE_DEFAULT, int $depth = 512)
+    public static function decodeToArray(string $json, $options = self::DECODE_DEFAULT, int $depth = 512)
     {
+        if ($options instanceof DecodeOptions) {
+            $options = $options->value();
+        }
+        if (!is_int($options)) {
+            throw new \InvalidArgumentException('$options must be an integer or an instance of DecodeOptions');
+        }
+
         $options |= JSON_THROW_ON_ERROR;    // force throwing exceptions
         $options |= JSON_OBJECT_AS_ARRAY;   // force object as array
 
