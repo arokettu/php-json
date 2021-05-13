@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Arokettu\Json;
 
-class EncodeOptions
+final class EncodeOptions
 {
     private $options;
 

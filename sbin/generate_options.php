@@ -74,7 +74,7 @@ foreach ($config as $classname => $options) {
         ]
     ));
 
-    $class = new ClassGenerator($classname, 'Arokettu\\Json');
+    $class = new ClassGenerator($classname, 'Arokettu\\Json', ClassGenerator::FLAG_FINAL);
 
     $buildParamsSnake = [];
     $buildParamsCamel = [];
