@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.0
+
+*May 13, 2021*
+
+* `DecodeOptions` and `EncodeOptions`
+
 ## 1.1.0
 
 *Aug 29, 2020*
