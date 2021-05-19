@@ -32,18 +32,19 @@ Main features:
 
 * ``JSON_THROW_ON_ERROR`` is enforced
 * Two convenience constants:
+    .. code-block:: php
 
-.. code-block:: php
+        <?php
 
-    const \Arokettu\Json\Json::ENCODE_DEFAULT =
-        JSON_THROW_ON_ERROR |
-        JSON_UNESCAPED_SLASHES |
-        JSON_UNESCAPED_UNICODE;
-    const \Arokettu\Json\Json::ENCODE_PRETTY =
-        JSON_THROW_ON_ERROR |
-        JSON_UNESCAPED_SLASHES |
-        JSON_UNESCAPED_UNICODE |
-        JSON_PRETTY_PRINT;
+        const \Arokettu\Json\Json::ENCODE_DEFAULT =
+            JSON_THROW_ON_ERROR |
+            JSON_UNESCAPED_SLASHES |
+            JSON_UNESCAPED_UNICODE;
+        const \Arokettu\Json\Json::ENCODE_PRETTY =
+            JSON_THROW_ON_ERROR |
+            JSON_UNESCAPED_SLASHES |
+            JSON_UNESCAPED_UNICODE |
+            JSON_PRETTY_PRINT;
 
 Decoding
 ========
