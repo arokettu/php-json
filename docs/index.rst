@@ -21,7 +21,10 @@ Encoding
 
     function \Arokettu\Json\Json::encode(
         mixed $value,
-        int|\Arokettu\Json\EncodeOptions $options = JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE,
+        int|\Arokettu\Json\EncodeOptions $options =
+            JSON_THROW_ON_ERROR |
+            JSON_UNESCAPED_SLASHES |
+            JSON_UNESCAPED_UNICODE,
         int $depth = 512,
     ): string;
 
@@ -30,8 +33,17 @@ Main features:
 * ``JSON_THROW_ON_ERROR`` is enforced
 * Two convenience constants:
 
-    * ``\Arokettu\Json\Json::ENCODE_DEFAULT = JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE``
-    * ``\Arokettu\Json\Json::ENCODE_PRETTY  = JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT``
+.. code-block:: php
+
+    const \Arokettu\Json\Json::ENCODE_DEFAULT =
+        JSON_THROW_ON_ERROR |
+        JSON_UNESCAPED_SLASHES |
+        JSON_UNESCAPED_UNICODE;
+    const \Arokettu\Json\Json::ENCODE_PRETTY =
+        JSON_THROW_ON_ERROR |
+        JSON_UNESCAPED_SLASHES |
+        JSON_UNESCAPED_UNICODE |
+        JSON_PRETTY_PRINT;
 
 Decoding
 ========
@@ -42,7 +54,7 @@ Decoding
 
     function \Arokettu\Json\Json::decode(
         string $json,
-        int|\Arokettu\Json\DecodeOptions $options = 0,
+        int|\Arokettu\Json\DecodeOptions $options = JSON_THROW_ON_ERROR,
         int $depth = 512,
     ): mixed;
 
@@ -58,7 +70,7 @@ Main features:
 
     function \Arokettu\Json\Json::decodeToArray(
         string $json,
-        int|\Arokettu\Json\DecodeOptions $options = 0,
+        int|\Arokettu\Json\DecodeOptions $options = JSON_THROW_ON_ERROR,
         int $depth = 512,
     ): mixed;
 
@@ -70,7 +82,7 @@ Force decoding objects as associative arrays
 
     function \Arokettu\Json\Json::decodeToObject(
         string $json,
-        int|\Arokettu\Json\DecodeOptions int $options = 0,
+        int|\Arokettu\Json\DecodeOptions int $options = JSON_THROW_ON_ERROR,
         int $depth = 512,
     ): mixed;
 
