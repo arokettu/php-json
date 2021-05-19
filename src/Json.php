@@ -48,15 +48,9 @@ final class Json
             throw new \InvalidArgumentException('$options must be an integer or an instance of DecodeOptions');
         }
 
-        $options |= JSON_THROW_ON_ERROR;    // force throwing exceptions
-
-        $decoded = json_decode($json, null, $depth, $options);
-
-        if (is_array($decoded) || is_object($decoded)) {
-            $decoded = self::objectToArrayObject($decoded);
-        }
-
-        return $decoded;
+        return $options & JSON_OBJECT_AS_ARRAY ?
+            self::decodeToArray($json, $options, $depth) :
+            self::decodeToObject($json, $options, $depth);
     }
 
     /**
@@ -75,9 +69,16 @@ final class Json
             throw new \InvalidArgumentException('$options must be an integer or an instance of DecodeOptions');
         }
 
+        $options |= JSON_THROW_ON_ERROR;    // force throwing exceptions
         $options &= ~JSON_OBJECT_AS_ARRAY;  // do not pass object as array
 
-        return self::decode($json, $options, $depth);
+        $decoded = json_decode($json, null, $depth, $options);
+
+        if (is_array($decoded) || is_object($decoded)) {
+            $decoded = self::objectToArrayObject($decoded);
+        }
+
+        return $decoded;
     }
 
     /**
