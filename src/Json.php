@@ -6,10 +6,10 @@ namespace Arokettu\Json;
 
 final class Json
 {
-    public const ENCODE_DEFAULT = JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE;
+    public const ENCODE_DEFAULT = JSON_THROW_ON_ERROR | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE;
     public const ENCODE_PRETTY  = self::ENCODE_DEFAULT | JSON_PRETTY_PRINT;
 
-    public const DECODE_DEFAULT = 0;
+    public const DECODE_DEFAULT = JSON_THROW_ON_ERROR;
 
     /**
      * @param mixed $value
