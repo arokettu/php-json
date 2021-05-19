@@ -46,6 +46,13 @@ class DecodeToObjectTest extends TestCase
         Json::decodeToObject('{');
     }
 
+    public function testExceptionIsEnforced()
+    {
+        $this->expectException(\JsonException::class);
+
+        Json::decodeToObject('{', 0);
+    }
+
     public function testAssocIgnored()
     {
         $obj = Json::decodeToObject('{"aaa": 123, "bbb": "abc"}', JSON_OBJECT_AS_ARRAY);

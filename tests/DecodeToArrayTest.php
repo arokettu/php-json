@@ -48,6 +48,13 @@ class DecodeToArrayTest extends TestCase
         Json::decodeToArray('{');
     }
 
+    public function testExceptionIsEnforced()
+    {
+        $this->expectException(\JsonException::class);
+
+        Json::decodeToArray('{', 0);
+    }
+
     public function testAssocIgnored()
     {
         $obj = Json::decodeToArray('{"aaa": 123, "bbb": "abc"}', JSON_OBJECT_AS_ARRAY);
