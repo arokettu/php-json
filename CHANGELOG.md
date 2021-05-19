@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.2.1
+
+*May 19, 2021*
+
+* Optimize decoding to array for `Json::decode()` a bit
+* Include `JSON_THROW_ON_ERROR` into
+  `Json::ENCODE_DEFAULT` /
+  `Json::ENCODE_PRETTY` /
+  `Json::DECODE_DEFAULT`
+  for consistency with `*Options` objects
+  (no logic change here because throwing exceptions is enforced by the methods)
+
 ## 1.2.0
 
 *May 13, 2021*
