@@ -149,7 +149,7 @@ foreach ($config as $classname => $options) {
 
     // __construct()
 
-    $constructor = $build = new MethodGenerator('__construct');
+    $constructor = new MethodGenerator('__construct');
     $constructor->setParameter(new ParameterGenerator('options', 'int'));
     $constructor->setBody('$this->options = $options;');
 
@@ -160,7 +160,7 @@ foreach ($config as $classname => $options) {
 
     // value() & toInt()
 
-    $getValue = $build = new MethodGenerator('value');
+    $getValue = new MethodGenerator('value');
     $getValue->setReturnType('int');
     $getValue->setBody('return $this->options;');
 
