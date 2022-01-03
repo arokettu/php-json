@@ -23,7 +23,7 @@ final class Json
         if ($options instanceof EncodeOptions) {
             $options = $options->value();
         }
-        if (!is_int($options)) {
+        if (!\is_int($options)) {
             throw new \InvalidArgumentException('$options must be an integer or an instance of EncodeOptions');
         }
 
@@ -44,7 +44,7 @@ final class Json
         if ($options instanceof DecodeOptions) {
             $options = $options->value();
         }
-        if (!is_int($options)) {
+        if (!\is_int($options)) {
             throw new \InvalidArgumentException('$options must be an integer or an instance of DecodeOptions');
         }
 
@@ -65,7 +65,7 @@ final class Json
         if ($options instanceof DecodeOptions) {
             $options = $options->value();
         }
-        if (!is_int($options)) {
+        if (!\is_int($options)) {
             throw new \InvalidArgumentException('$options must be an integer or an instance of DecodeOptions');
         }
 
@@ -74,7 +74,7 @@ final class Json
 
         $decoded = json_decode($json, null, $depth, $options);
 
-        if (is_array($decoded) || is_object($decoded)) {
+        if (\is_array($decoded) || \is_object($decoded)) {
             $decoded = self::objectToArrayObject($decoded);
         }
 
@@ -93,7 +93,7 @@ final class Json
         if ($options instanceof DecodeOptions) {
             $options = $options->value();
         }
-        if (!is_int($options)) {
+        if (!\is_int($options)) {
             throw new \InvalidArgumentException('$options must be an integer or an instance of DecodeOptions');
         }
 
@@ -109,12 +109,12 @@ final class Json
      */
     private static function objectToArrayObject($value)
     {
-        if (is_object($value)) {
+        if (\is_object($value)) {
             $value = new \ArrayObject((array) $value);
         }
 
         foreach ($value as &$v) {
-            if (is_array($v) || is_object($v)) {
+            if (\is_array($v) || \is_object($v)) {
                 $v = self::objectToArrayObject($v);
             }
         }

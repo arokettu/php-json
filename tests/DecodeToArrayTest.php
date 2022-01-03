@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class DecodeToArrayTest extends TestCase
 {
-    public function testParams()
+    public function testParams(): void
     {
         // get array when passing param
         $this->assertIsArray(Json::decode('{}', JSON_OBJECT_AS_ARRAY));
@@ -19,7 +19,7 @@ class DecodeToArrayTest extends TestCase
         $this->assertIsNotArray(Json::decodeToObject('{}', JSON_OBJECT_AS_ARRAY));
     }
 
-    public function testScalar()
+    public function testScalar(): void
     {
         $this->assertEquals('test', Json::decodeToArray('"test"'));
         $this->assertEquals(123, Json::decodeToArray('123'));
@@ -27,12 +27,12 @@ class DecodeToArrayTest extends TestCase
         $this->assertEquals(false, Json::decodeToArray('false'));
     }
 
-    public function testArray()
+    public function testArray(): void
     {
         $this->assertEquals([1, 2, 3, "4"], Json::decodeToArray('[1,2,3,"4"]'));
     }
 
-    public function testObject()
+    public function testObject(): void
     {
         $obj = Json::decodeToArray('{"aaa": 123, "bbb": "abc"}');
 
@@ -41,28 +41,28 @@ class DecodeToArrayTest extends TestCase
         $this->assertEquals(['aaa' => 123, 'bbb' => 'abc'], $obj);
     }
 
-    public function testException()
+    public function testException(): void
     {
         $this->expectException(\JsonException::class);
 
         Json::decodeToArray('{');
     }
 
-    public function testExceptionIsEnforced()
+    public function testExceptionIsEnforced(): void
     {
         $this->expectException(\JsonException::class);
 
         Json::decodeToArray('{', 0);
     }
 
-    public function testAssocIgnored()
+    public function testAssocIgnored(): void
     {
         $obj = Json::decodeToArray('{"aaa": 123, "bbb": "abc"}', JSON_OBJECT_AS_ARRAY);
 
         $this->assertIsArray($obj);
     }
 
-    public function testRecursion()
+    public function testRecursion(): void
     {
         $json = <<<JSON
             [

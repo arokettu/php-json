@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class DecodeToObjectTest extends TestCase
 {
-    public function testParams()
+    public function testParams(): void
     {
         // get object when not passing param
         $this->assertInstanceOf(\ArrayObject::class, Json::decode('{}'));
@@ -17,7 +17,7 @@ class DecodeToObjectTest extends TestCase
         $this->assertInstanceOf(\ArrayObject::class, Json::decodeToObject('{}', JSON_OBJECT_AS_ARRAY));
     }
 
-    public function testScalar()
+    public function testScalar(): void
     {
         $this->assertEquals('test', Json::decodeToObject('"test"'));
         $this->assertEquals(123, Json::decodeToObject('123'));
@@ -25,12 +25,12 @@ class DecodeToObjectTest extends TestCase
         $this->assertEquals(false, Json::decodeToObject('false'));
     }
 
-    public function testArray()
+    public function testArray(): void
     {
         $this->assertEquals([1, 2, 3, "4"], Json::decodeToObject('[1,2,3,"4"]'));
     }
 
-    public function testObject()
+    public function testObject(): void
     {
         $obj = Json::decodeToObject('{"aaa": 123, "bbb": "abc"}');
 
@@ -39,28 +39,28 @@ class DecodeToObjectTest extends TestCase
         $this->assertEquals(['aaa' => 123, 'bbb' => 'abc'], $obj->getArrayCopy());
     }
 
-    public function testException()
+    public function testException(): void
     {
         $this->expectException(\JsonException::class);
 
         Json::decodeToObject('{');
     }
 
-    public function testExceptionIsEnforced()
+    public function testExceptionIsEnforced(): void
     {
         $this->expectException(\JsonException::class);
 
         Json::decodeToObject('{', 0);
     }
 
-    public function testAssocIgnored()
+    public function testAssocIgnored(): void
     {
         $obj = Json::decodeToObject('{"aaa": 123, "bbb": "abc"}', JSON_OBJECT_AS_ARRAY);
 
         $this->assertInstanceOf(\ArrayObject::class, $obj);
     }
 
-    public function testRecursion()
+    public function testRecursion(): void
     {
         $json = <<<JSON
             [

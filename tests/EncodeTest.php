@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class EncodeTest extends TestCase
 {
-    public function testException()
+    public function testException(): void
     {
         $this->expectException(\JsonException::class);
 
