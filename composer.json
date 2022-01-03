@@ -38,7 +38,7 @@
     "require-dev": {
         "danielstjules/stringy": "^3.1",
         "dealerdirect/phpcodesniffer-composer-installer": "*",
-        "laminas/laminas-code": "^3.5",
+        "laminas/laminas-code": "^3.5 | ^4.0",
         "phpcompatibility/php-compatibility": "*",
         "phpunit/phpunit": "^9.3",
         "psy/psysh": "*",
