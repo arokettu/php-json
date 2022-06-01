@@ -7,7 +7,6 @@
 
 # docs
 /docs/*.html
-/docs/conf.py
 /docs/build
 
 # composer
