@@ -11,6 +11,9 @@ declare(strict_types=1);
 
 namespace Arokettu\Json;
 
+/**
+ * @generated
+ */
 final class DecodeOptions
 {
     private $options;

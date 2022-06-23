@@ -75,6 +75,9 @@ foreach ($config as $classname => $options) {
     ));
 
     $class = new ClassGenerator($classname, 'Arokettu\\Json', ClassGenerator::FLAG_FINAL);
+    $class->setDocBlock(new DocBlockGenerator(null, null, [
+        new GenericTag('generated'),
+    ]));
 
     $buildParamsSnake = [];
     $buildParamsCamel = [];
@@ -200,8 +203,6 @@ foreach ($config as $classname => $options) {
     $file->setClass($class);
 
     $php = $file->generate();
-    // fix incorrect escape of self
-    $php = str_replace('\\self', 'self', $php);
     // phpcs will format every parameter on its own line in builder
     $php = str_replace('build(int', "build(\nint", $php);
     // remove excess line breaks at the start of the class
