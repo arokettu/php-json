@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.0
+
+*Jun 29, 2022*
+
+* `ArrayObject`s are now constructed with `ARRAY_AS_PROPS` enabled
+
 ## 1.2.1
 
 *May 19, 2021*
