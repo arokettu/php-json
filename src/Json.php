@@ -110,7 +110,7 @@ final class Json
     private static function objectToArrayObject($value)
     {
         if ($value instanceof \stdClass) {
-            $value = new \ArrayObject((array) $value, \ArrayObject::ARRAY_AS_PROPS);
+            $value = new \ArrayObject(get_object_vars($value), \ArrayObject::ARRAY_AS_PROPS);
         }
 
         foreach ($value as &$v) {
