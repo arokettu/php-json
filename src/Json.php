@@ -109,12 +109,12 @@ final class Json
      */
     private static function objectToArrayObject($value)
     {
-        if (\is_object($value)) {
-            $value = new \ArrayObject((array) $value);
+        if ($value instanceof \stdClass) {
+            $value = new \ArrayObject((array) $value, \ArrayObject::ARRAY_AS_PROPS);
         }
 
         foreach ($value as &$v) {
-            if (\is_array($v) || \is_object($v)) {
+            if (\is_array($v) || $v instanceof \stdClass) {
                 $v = self::objectToArrayObject($v);
             }
         }
