@@ -21,7 +21,9 @@ This both keeps array/object types of the original and allows to work with all d
 $obj = \Arokettu\Json\Json::decode('{"abc": 123}');
 
 // we can access any data array-style
-unset($obj['abc']);
+var_dump($obj['abc']);
+// or object-style
+var_dump($obj->abc);
 
 // object will not turn into array
 echo \Arokettu\Json\Json::encode($obj);

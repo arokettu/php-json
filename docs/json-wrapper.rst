@@ -38,6 +38,8 @@ Main features:
 Decoding
 ========
 
+.. versionchanged:: 1.3.0 ``ArrayObject`` now has ``ARRAY_AS_PROPS`` enabled
+
 .. code-block:: php
 
     <?php

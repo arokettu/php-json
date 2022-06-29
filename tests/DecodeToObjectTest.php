@@ -37,6 +37,10 @@ class DecodeToObjectTest extends TestCase
         $this->assertInstanceOf(\ArrayObject::class, $obj);
         $this->assertCount(2, $obj);
         $this->assertEquals(['aaa' => 123, 'bbb' => 'abc'], $obj->getArrayCopy());
+
+        // test both array access and prop access
+        $this->assertEquals(123, $obj['aaa']);
+        $this->assertEquals(123, $obj->aaa);
     }
 
     public function testException(): void
