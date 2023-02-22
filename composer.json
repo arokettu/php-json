@@ -42,7 +42,7 @@
         "laminas/laminas-code": "^3.5 | ^4.0",
         "phpunit/phpunit": "^9.3",
         "psy/psysh": "*",
-        "sandfox.dev/code-standard": "^10@dev",
+        "sandfox.dev/code-standard": "^1",
         "squizlabs/php_codesniffer": "*"
     }
 }
