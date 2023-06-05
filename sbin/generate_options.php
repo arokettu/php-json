@@ -53,6 +53,14 @@ $config = [
             'pretty' => $encdef . ' | JSON_PRETTY_PRINT',
         ],
     ],
+    'ValidateOptions' => [
+        'constants' => [
+            'JSON_INVALID_UTF8_IGNORE',
+        ],
+        'builders' => [
+            'default' => '0',
+        ],
+    ],
 ];
 
 foreach ($config as $classname => $options) {
