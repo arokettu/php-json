@@ -36,7 +36,8 @@
     },
     "require": {
         "php": "^7.3 | ^8.0",
-        "ext-json": "*"
+        "ext-json": "*",
+        "symfony/polyfill-php83": "^1.27"
     },
     "require-dev": {
         "laminas/laminas-code": "^3.5 | ^4.0",

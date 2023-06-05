@@ -11,6 +11,8 @@ final class Json
 
     public const DECODE_DEFAULT = JSON_THROW_ON_ERROR;
 
+    public const VALIDATE_DEFAULT = 0;
+
     /**
      * @param mixed $value
      * @param int|EncodeOptions $options
@@ -24,7 +26,7 @@ final class Json
             $options = $options->value();
         }
         if (!\is_int($options)) {
-            throw new \InvalidArgumentException('$options must be an integer or an instance of EncodeOptions');
+            throw new \TypeError('$options must be an integer or an instance of EncodeOptions');
         }
 
         $options |= JSON_THROW_ON_ERROR;    // force throwing exceptions
@@ -45,7 +47,7 @@ final class Json
             $options = $options->value();
         }
         if (!\is_int($options)) {
-            throw new \InvalidArgumentException('$options must be an integer or an instance of DecodeOptions');
+            throw new \TypeError('$options must be an integer or an instance of DecodeOptions');
         }
 
         return $options & JSON_OBJECT_AS_ARRAY ?
@@ -66,7 +68,7 @@ final class Json
             $options = $options->value();
         }
         if (!\is_int($options)) {
-            throw new \InvalidArgumentException('$options must be an integer or an instance of DecodeOptions');
+            throw new \TypeError('$options must be an integer or an instance of DecodeOptions');
         }
 
         $options |= JSON_THROW_ON_ERROR;    // force throwing exceptions
@@ -94,7 +96,7 @@ final class Json
             $options = $options->value();
         }
         if (!\is_int($options)) {
-            throw new \InvalidArgumentException('$options must be an integer or an instance of DecodeOptions');
+            throw new \TypeError('$options must be an integer or an instance of DecodeOptions');
         }
 
         $options |= JSON_THROW_ON_ERROR;    // force throwing exceptions
@@ -120,5 +122,17 @@ final class Json
         }
 
         return $value;
+    }
+
+    public static function validate(string $json, $options = self::VALIDATE_DEFAULT, int $depth = 512): bool
+    {
+        if ($options instanceof ValidateOptions) {
+            $options = $options->value();
+        }
+        if (!\is_int($options)) {
+            throw new \TypeError('$options must be an integer or an instance of ValidateOptions');
+        }
+
+        return json_validate($json, $options, $depth);
     }
 }
