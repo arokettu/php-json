@@ -139,6 +139,6 @@ final class Json
             throw new \TypeError('$options must be an integer or an instance of ValidateOptions');
         }
 
-        return \json_validate($json, $options, $depth);
+        return \json_validate($json, $depth, $options);
     }
 }
