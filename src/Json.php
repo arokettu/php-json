@@ -31,7 +31,7 @@ final class Json
 
         $options |= JSON_THROW_ON_ERROR;    // force throwing exceptions
 
-        return json_encode($value, $options, $depth);
+        return \json_encode($value, $options, $depth);
     }
 
     /**
@@ -74,7 +74,7 @@ final class Json
         $options |= JSON_THROW_ON_ERROR;    // force throwing exceptions
         $options &= ~JSON_OBJECT_AS_ARRAY;  // do not pass object as array
 
-        $decoded = json_decode($json, null, $depth, $options);
+        $decoded = \json_decode($json, null, $depth, $options);
 
         if (\is_array($decoded) || \is_object($decoded)) {
             $decoded = self::objectToArrayObject($decoded);
@@ -102,7 +102,7 @@ final class Json
         $options |= JSON_THROW_ON_ERROR;    // force throwing exceptions
         $options |= JSON_OBJECT_AS_ARRAY;   // force object as array
 
-        return json_decode($json, null, $depth, $options);
+        return \json_decode($json, null, $depth, $options);
     }
 
     /**
@@ -112,7 +112,7 @@ final class Json
     private static function objectToArrayObject($value)
     {
         if ($value instanceof \stdClass) {
-            $value = new \ArrayObject(get_object_vars($value), \ArrayObject::ARRAY_AS_PROPS);
+            $value = new \ArrayObject(\get_object_vars($value), \ArrayObject::ARRAY_AS_PROPS);
         }
 
         foreach ($value as &$v) {
@@ -124,6 +124,12 @@ final class Json
         return $value;
     }
 
+    /**
+     * @param string $json
+     * @param int|ValidateOptions $options
+     * @param int $depth
+     * @return bool
+     */
     public static function validate(string $json, $options = self::VALIDATE_DEFAULT, int $depth = 512): bool
     {
         if ($options instanceof ValidateOptions) {
@@ -133,6 +139,6 @@ final class Json
             throw new \TypeError('$options must be an integer or an instance of ValidateOptions');
         }
 
-        return json_validate($json, $options, $depth);
+        return \json_validate($json, $options, $depth);
     }
 }

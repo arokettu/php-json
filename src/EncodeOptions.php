@@ -277,7 +277,7 @@ final class EncodeOptions
         if ($this->options & JSON_THROW_ON_ERROR) {
             $constants[] = 'JSON_THROW_ON_ERROR';
         }
-        return implode(' | ', $constants);
+        return \implode(' | ', $constants);
     }
 
     public function withHexTag(): self

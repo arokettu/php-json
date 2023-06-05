@@ -4,6 +4,12 @@
 -->
 <ruleset name="Custom Standard" namespace="MyProject\CS\Standard">
     <rule ref="SandFox_PHP73"/>
+    <rule ref="SlevomatCodingStandard.Namespaces.FullyQualifiedGlobalFunctions">
+        <properties>
+            <!-- Reset to default (include all functions) -->
+            <property name="includeSpecialFunctions" value="0"/>
+        </properties>
+    </rule>
     <file>src</file>
     <file>tests</file>
 </ruleset>

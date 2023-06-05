@@ -198,7 +198,7 @@ foreach ($config as $classname => $options) {
             PHP;
     }
 
-    $body .= "return implode(' | ', \$constants);";
+    $body .= "return \\implode(' | ', \$constants);";
 
     $string->setBody($body);
 

@@ -13,7 +13,7 @@ class EncodeTest extends TestCase
     {
         $this->expectException(\JsonException::class);
 
-        $data = fopen(__FILE__, 'r');
+        $data = \fopen(__FILE__, 'r');
         Json::encode($data);
     }
 }

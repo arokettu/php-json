@@ -62,7 +62,7 @@ final class ValidateOptions
         if ($this->options & JSON_INVALID_UTF8_IGNORE) {
             $constants[] = 'JSON_INVALID_UTF8_IGNORE';
         }
-        return implode(' | ', $constants);
+        return \implode(' | ', $constants);
     }
 
     public function withInvalidUtf8Ignore(): self
