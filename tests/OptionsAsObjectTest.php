@@ -7,6 +7,7 @@ namespace Arokettu\Json\Tests;
 use Arokettu\Json\DecodeOptions;
 use Arokettu\Json\EncodeOptions;
 use Arokettu\Json\Json;
+use Arokettu\Json\ValidateOptions;
 use PHPUnit\Framework\TestCase;
 
 class OptionsAsObjectTest extends TestCase
@@ -24,14 +25,14 @@ class OptionsAsObjectTest extends TestCase
 
     public function testEncodeOptionsInvalidClass(): void
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(\TypeError::class);
 
         Json::encode(['a' => 'b'], DecodeOptions::default());
     }
 
     public function testEncodeOptionsInvalidScalar(): void
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(\TypeError::class);
 
         Json::encode(['a' => 'b'], '0');
     }
@@ -55,43 +56,64 @@ class OptionsAsObjectTest extends TestCase
 
     public function testDecodeOptionsInvalidClass(): void
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(\TypeError::class);
 
         Json::decode('{"a":"b"}', EncodeOptions::default());
     }
 
     public function testDecodeToArrayOptionsInvalidClass(): void
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(\TypeError::class);
 
         Json::decodeToArray('{"a":"b"}', EncodeOptions::default());
     }
 
     public function testDecodeToObjectOptionsInvalidClass(): void
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(\TypeError::class);
 
         Json::decodeToObject('{"a":"b"}', EncodeOptions::default());
     }
 
     public function testDecodeOptionsInvalidScalar(): void
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(\TypeError::class);
 
         Json::decode('{"a":"b"}', '0');
     }
 
     public function testDecodeToArrayOptionsInvalidScalar(): void
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(\TypeError::class);
 
         Json::decodeToArray('{"a":"b"}', '0');
     }
 
     public function testDecodeToObjectOptionsInvalidScalar(): void
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(\TypeError::class);
 
         Json::decodeToObject('{"a":"b"}', '0');
+    }
+
+    public function testPassValidateOptions(): void
+    {
+        $valid = Json::validate('{"a":"b"}', ValidateOptions::default());
+
+        self::assertEquals(true, $valid);
+    }
+
+    public function testValidateOptionsInvalidClass(): void
+    {
+        $this->expectException(\TypeError::class);
+
+        Json::validate('{"a":"b"}', DecodeOptions::default());
+    }
+
+    public function testValidateOptionsInvalidScalar(): void
+    {
+        $this->expectException(\TypeError::class);
+
+        Json::validate('{"a":"b"}', '0');
     }
 }
