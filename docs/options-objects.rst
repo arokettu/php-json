@@ -1,12 +1,13 @@
 Options Objects
 ###############
 
-The library provides 2 classes to manipulate option sets in OOP way:
+The library provides 3 classes to manipulate option sets in OOP way:
 
 * ``Arokettu\Json\DecodeOptions`` for decoding
 * ``Arokettu\Json\EncodeOptions`` for encoding
+* ``Arokettu\Json\ValidateOptions`` for validating
 
-Objects of both classes are immutable.
+Objects of all classes are immutable.
 Any change creates a new instance.
 
 Constructors
@@ -42,6 +43,9 @@ Preset constructors
     \Arokettu\Json\EncodeOptions::default();
     // JSON_THROW_ON_ERROR | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT
     \Arokettu\Json\EncodeOptions::pretty();
+
+    // 0
+    \Arokettu\Json\ValidateOptions::default();
 
 Builder constructor
 -------------------
@@ -97,6 +101,12 @@ Builder constructor
         ?bool $invalid_utf8_substitute = null,
         ?bool $throw_on_error = null,
     ): \Arokettu\Json\EncodeOptions;
+
+    public static function \Arokettu\Json\ValidateOptions::build(
+        int $options = 0,
+        ?bool $invalidUtf8Ignore = null,
+        ?bool $invalid_utf8_ignore = null
+    ): \Arokettu\Json\ValidateOptions
 
 The builder constructor is made with named parameters in mind.
 Params exist in both snake case and camel case forms for your preference.
@@ -184,6 +194,12 @@ Full list:
     function \Arokettu\Json\EncodeOptions::withoutInvalidUtf8Ignore(): \Arokettu\Json\EncodeOptions;
     function \Arokettu\Json\EncodeOptions::withoutInvalidUtf8Substitute(): \Arokettu\Json\EncodeOptions;
     function \Arokettu\Json\EncodeOptions::withoutThrowOnError(): \Arokettu\Json\EncodeOptions;
+
+    // validate setters
+    function \Arokettu\Json\ValidateOptions::withInvalidUtf8Ignore(): \Arokettu\Json\ValidateOptions;
+
+    // validate unsetters
+    function \Arokettu\Json\ValidateOptions::withoutInvalidUtf8Ignore(): \Arokettu\Json\ValidateOptions;
 
 Example:
 
