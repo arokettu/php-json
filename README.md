@@ -31,7 +31,7 @@ echo \Arokettu\Json\Json::encode($obj);
 
 ### Options objects
 
-OOP interface for json parameters: ``EncodeOptions`` and ``DecodeOptions``
+OOP interface for json flags: ``EncodeOptions``, ``DecodeOptions``, ``ValidateOptions``
 
 ```php
 <?php
