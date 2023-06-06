@@ -12,11 +12,11 @@ class DecodeToArrayTest extends TestCase
     public function testParams(): void
     {
         // get array when passing param
-        $this->assertIsArray(Json::decode('{}', JSON_OBJECT_AS_ARRAY));
+        $this->assertIsArray(Json::decode('{}', \JSON_OBJECT_AS_ARRAY));
         // get array when using decodeToArray
         $this->assertIsArray(Json::decodeToArray('{}'));
         // do not get array with decodeToObject even with param
-        $this->assertIsNotArray(Json::decodeToObject('{}', JSON_OBJECT_AS_ARRAY));
+        $this->assertIsNotArray(Json::decodeToObject('{}', \JSON_OBJECT_AS_ARRAY));
     }
 
     public function testScalar(): void
@@ -57,7 +57,7 @@ class DecodeToArrayTest extends TestCase
 
     public function testAssocIgnored(): void
     {
-        $obj = Json::decodeToArray('{"aaa": 123, "bbb": "abc"}', JSON_OBJECT_AS_ARRAY);
+        $obj = Json::decodeToArray('{"aaa": 123, "bbb": "abc"}', \JSON_OBJECT_AS_ARRAY);
 
         $this->assertIsArray($obj);
     }

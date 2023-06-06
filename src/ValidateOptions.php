@@ -25,13 +25,13 @@ final class ValidateOptions
     ): self {
         if ($invalidUtf8Ignore !== null) {
             $options = $invalidUtf8Ignore ?
-                $options | JSON_INVALID_UTF8_IGNORE :
-                $options & ~JSON_INVALID_UTF8_IGNORE;
+                $options | \JSON_INVALID_UTF8_IGNORE :
+                $options & ~\JSON_INVALID_UTF8_IGNORE;
         }
         if ($invalid_utf8_ignore !== null) {
             $options = $invalid_utf8_ignore ?
-                $options | JSON_INVALID_UTF8_IGNORE :
-                $options & ~JSON_INVALID_UTF8_IGNORE;
+                $options | \JSON_INVALID_UTF8_IGNORE :
+                $options & ~\JSON_INVALID_UTF8_IGNORE;
         }
         return new self($options);
     }
@@ -59,7 +59,7 @@ final class ValidateOptions
     public function toString(): string
     {
         $constants = [];
-        if ($this->options & JSON_INVALID_UTF8_IGNORE) {
+        if ($this->options & \JSON_INVALID_UTF8_IGNORE) {
             $constants[] = 'JSON_INVALID_UTF8_IGNORE';
         }
         return \implode(' | ', $constants);
@@ -67,11 +67,11 @@ final class ValidateOptions
 
     public function withInvalidUtf8Ignore(): self
     {
-        return new self($this->options | JSON_INVALID_UTF8_IGNORE);
+        return new self($this->options | \JSON_INVALID_UTF8_IGNORE);
     }
 
     public function withoutInvalidUtf8Ignore(): self
     {
-        return new self($this->options & ~JSON_INVALID_UTF8_IGNORE);
+        return new self($this->options & ~\JSON_INVALID_UTF8_IGNORE);
     }
 }

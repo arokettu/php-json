@@ -6,10 +6,10 @@ namespace Arokettu\Json;
 
 final class Json
 {
-    public const ENCODE_DEFAULT = JSON_THROW_ON_ERROR | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE;
-    public const ENCODE_PRETTY  = self::ENCODE_DEFAULT | JSON_PRETTY_PRINT;
+    public const ENCODE_DEFAULT = \JSON_THROW_ON_ERROR | \JSON_UNESCAPED_SLASHES | \JSON_UNESCAPED_UNICODE;
+    public const ENCODE_PRETTY  = self::ENCODE_DEFAULT | \JSON_PRETTY_PRINT;
 
-    public const DECODE_DEFAULT = JSON_THROW_ON_ERROR;
+    public const DECODE_DEFAULT = \JSON_THROW_ON_ERROR;
 
     public const VALIDATE_DEFAULT = 0;
 
@@ -29,7 +29,7 @@ final class Json
             throw new \TypeError('$options must be an integer or an instance of EncodeOptions');
         }
 
-        $options |= JSON_THROW_ON_ERROR;    // force throwing exceptions
+        $options |= \JSON_THROW_ON_ERROR; // force throwing exceptions
 
         return \json_encode($value, $options, $depth);
     }
@@ -50,7 +50,7 @@ final class Json
             throw new \TypeError('$options must be an integer or an instance of DecodeOptions');
         }
 
-        return $options & JSON_OBJECT_AS_ARRAY ?
+        return $options & \JSON_OBJECT_AS_ARRAY ?
             self::decodeToArray($json, $options, $depth) :
             self::decodeToObject($json, $options, $depth);
     }
@@ -71,8 +71,8 @@ final class Json
             throw new \TypeError('$options must be an integer or an instance of DecodeOptions');
         }
 
-        $options |= JSON_THROW_ON_ERROR;    // force throwing exceptions
-        $options &= ~JSON_OBJECT_AS_ARRAY;  // do not pass object as array
+        $options |= \JSON_THROW_ON_ERROR;    // force throwing exceptions
+        $options &= ~\JSON_OBJECT_AS_ARRAY;  // do not pass object as array
 
         $decoded = \json_decode($json, null, $depth, $options);
 
@@ -99,8 +99,8 @@ final class Json
             throw new \TypeError('$options must be an integer or an instance of DecodeOptions');
         }
 
-        $options |= JSON_THROW_ON_ERROR;    // force throwing exceptions
-        $options |= JSON_OBJECT_AS_ARRAY;   // force object as array
+        $options |= \JSON_THROW_ON_ERROR;    // force throwing exceptions
+        $options |= \JSON_OBJECT_AS_ARRAY;   // force object as array
 
         return \json_decode($json, null, $depth, $options);
     }

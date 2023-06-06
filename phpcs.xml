@@ -10,6 +10,7 @@
             <property name="includeSpecialFunctions" value="0"/>
         </properties>
     </rule>
+    <rule ref="SlevomatCodingStandard.Namespaces.FullyQualifiedGlobalConstants"/>
     <file>src</file>
     <file>tests</file>
 </ruleset>

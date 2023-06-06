@@ -53,165 +53,165 @@ final class EncodeOptions
     ): self {
         if ($hexTag !== null) {
             $options = $hexTag ?
-                $options | JSON_HEX_TAG :
-                $options & ~JSON_HEX_TAG;
+                $options | \JSON_HEX_TAG :
+                $options & ~\JSON_HEX_TAG;
         }
         if ($hexAmp !== null) {
             $options = $hexAmp ?
-                $options | JSON_HEX_AMP :
-                $options & ~JSON_HEX_AMP;
+                $options | \JSON_HEX_AMP :
+                $options & ~\JSON_HEX_AMP;
         }
         if ($hexApos !== null) {
             $options = $hexApos ?
-                $options | JSON_HEX_APOS :
-                $options & ~JSON_HEX_APOS;
+                $options | \JSON_HEX_APOS :
+                $options & ~\JSON_HEX_APOS;
         }
         if ($hexQuot !== null) {
             $options = $hexQuot ?
-                $options | JSON_HEX_QUOT :
-                $options & ~JSON_HEX_QUOT;
+                $options | \JSON_HEX_QUOT :
+                $options & ~\JSON_HEX_QUOT;
         }
         if ($forceObject !== null) {
             $options = $forceObject ?
-                $options | JSON_FORCE_OBJECT :
-                $options & ~JSON_FORCE_OBJECT;
+                $options | \JSON_FORCE_OBJECT :
+                $options & ~\JSON_FORCE_OBJECT;
         }
         if ($numericCheck !== null) {
             $options = $numericCheck ?
-                $options | JSON_NUMERIC_CHECK :
-                $options & ~JSON_NUMERIC_CHECK;
+                $options | \JSON_NUMERIC_CHECK :
+                $options & ~\JSON_NUMERIC_CHECK;
         }
         if ($prettyPrint !== null) {
             $options = $prettyPrint ?
-                $options | JSON_PRETTY_PRINT :
-                $options & ~JSON_PRETTY_PRINT;
+                $options | \JSON_PRETTY_PRINT :
+                $options & ~\JSON_PRETTY_PRINT;
         }
         if ($unescapedSlashes !== null) {
             $options = $unescapedSlashes ?
-                $options | JSON_UNESCAPED_SLASHES :
-                $options & ~JSON_UNESCAPED_SLASHES;
+                $options | \JSON_UNESCAPED_SLASHES :
+                $options & ~\JSON_UNESCAPED_SLASHES;
         }
         if ($unescapedUnicode !== null) {
             $options = $unescapedUnicode ?
-                $options | JSON_UNESCAPED_UNICODE :
-                $options & ~JSON_UNESCAPED_UNICODE;
+                $options | \JSON_UNESCAPED_UNICODE :
+                $options & ~\JSON_UNESCAPED_UNICODE;
         }
         if ($partialOutputOnError !== null) {
             $options = $partialOutputOnError ?
-                $options | JSON_PARTIAL_OUTPUT_ON_ERROR :
-                $options & ~JSON_PARTIAL_OUTPUT_ON_ERROR;
+                $options | \JSON_PARTIAL_OUTPUT_ON_ERROR :
+                $options & ~\JSON_PARTIAL_OUTPUT_ON_ERROR;
         }
         if ($preserveZeroFraction !== null) {
             $options = $preserveZeroFraction ?
-                $options | JSON_PRESERVE_ZERO_FRACTION :
-                $options & ~JSON_PRESERVE_ZERO_FRACTION;
+                $options | \JSON_PRESERVE_ZERO_FRACTION :
+                $options & ~\JSON_PRESERVE_ZERO_FRACTION;
         }
         if ($unescapedLineTerminators !== null) {
             $options = $unescapedLineTerminators ?
-                $options | JSON_UNESCAPED_LINE_TERMINATORS :
-                $options & ~JSON_UNESCAPED_LINE_TERMINATORS;
+                $options | \JSON_UNESCAPED_LINE_TERMINATORS :
+                $options & ~\JSON_UNESCAPED_LINE_TERMINATORS;
         }
         if ($invalidUtf8Ignore !== null) {
             $options = $invalidUtf8Ignore ?
-                $options | JSON_INVALID_UTF8_IGNORE :
-                $options & ~JSON_INVALID_UTF8_IGNORE;
+                $options | \JSON_INVALID_UTF8_IGNORE :
+                $options & ~\JSON_INVALID_UTF8_IGNORE;
         }
         if ($invalidUtf8Substitute !== null) {
             $options = $invalidUtf8Substitute ?
-                $options | JSON_INVALID_UTF8_SUBSTITUTE :
-                $options & ~JSON_INVALID_UTF8_SUBSTITUTE;
+                $options | \JSON_INVALID_UTF8_SUBSTITUTE :
+                $options & ~\JSON_INVALID_UTF8_SUBSTITUTE;
         }
         if ($throwOnError !== null) {
             $options = $throwOnError ?
-                $options | JSON_THROW_ON_ERROR :
-                $options & ~JSON_THROW_ON_ERROR;
+                $options | \JSON_THROW_ON_ERROR :
+                $options & ~\JSON_THROW_ON_ERROR;
         }
         if ($hex_tag !== null) {
             $options = $hex_tag ?
-                $options | JSON_HEX_TAG :
-                $options & ~JSON_HEX_TAG;
+                $options | \JSON_HEX_TAG :
+                $options & ~\JSON_HEX_TAG;
         }
         if ($hex_amp !== null) {
             $options = $hex_amp ?
-                $options | JSON_HEX_AMP :
-                $options & ~JSON_HEX_AMP;
+                $options | \JSON_HEX_AMP :
+                $options & ~\JSON_HEX_AMP;
         }
         if ($hex_apos !== null) {
             $options = $hex_apos ?
-                $options | JSON_HEX_APOS :
-                $options & ~JSON_HEX_APOS;
+                $options | \JSON_HEX_APOS :
+                $options & ~\JSON_HEX_APOS;
         }
         if ($hex_quot !== null) {
             $options = $hex_quot ?
-                $options | JSON_HEX_QUOT :
-                $options & ~JSON_HEX_QUOT;
+                $options | \JSON_HEX_QUOT :
+                $options & ~\JSON_HEX_QUOT;
         }
         if ($force_object !== null) {
             $options = $force_object ?
-                $options | JSON_FORCE_OBJECT :
-                $options & ~JSON_FORCE_OBJECT;
+                $options | \JSON_FORCE_OBJECT :
+                $options & ~\JSON_FORCE_OBJECT;
         }
         if ($numeric_check !== null) {
             $options = $numeric_check ?
-                $options | JSON_NUMERIC_CHECK :
-                $options & ~JSON_NUMERIC_CHECK;
+                $options | \JSON_NUMERIC_CHECK :
+                $options & ~\JSON_NUMERIC_CHECK;
         }
         if ($pretty_print !== null) {
             $options = $pretty_print ?
-                $options | JSON_PRETTY_PRINT :
-                $options & ~JSON_PRETTY_PRINT;
+                $options | \JSON_PRETTY_PRINT :
+                $options & ~\JSON_PRETTY_PRINT;
         }
         if ($unescaped_slashes !== null) {
             $options = $unescaped_slashes ?
-                $options | JSON_UNESCAPED_SLASHES :
-                $options & ~JSON_UNESCAPED_SLASHES;
+                $options | \JSON_UNESCAPED_SLASHES :
+                $options & ~\JSON_UNESCAPED_SLASHES;
         }
         if ($unescaped_unicode !== null) {
             $options = $unescaped_unicode ?
-                $options | JSON_UNESCAPED_UNICODE :
-                $options & ~JSON_UNESCAPED_UNICODE;
+                $options | \JSON_UNESCAPED_UNICODE :
+                $options & ~\JSON_UNESCAPED_UNICODE;
         }
         if ($partial_output_on_error !== null) {
             $options = $partial_output_on_error ?
-                $options | JSON_PARTIAL_OUTPUT_ON_ERROR :
-                $options & ~JSON_PARTIAL_OUTPUT_ON_ERROR;
+                $options | \JSON_PARTIAL_OUTPUT_ON_ERROR :
+                $options & ~\JSON_PARTIAL_OUTPUT_ON_ERROR;
         }
         if ($preserve_zero_fraction !== null) {
             $options = $preserve_zero_fraction ?
-                $options | JSON_PRESERVE_ZERO_FRACTION :
-                $options & ~JSON_PRESERVE_ZERO_FRACTION;
+                $options | \JSON_PRESERVE_ZERO_FRACTION :
+                $options & ~\JSON_PRESERVE_ZERO_FRACTION;
         }
         if ($unescaped_line_terminators !== null) {
             $options = $unescaped_line_terminators ?
-                $options | JSON_UNESCAPED_LINE_TERMINATORS :
-                $options & ~JSON_UNESCAPED_LINE_TERMINATORS;
+                $options | \JSON_UNESCAPED_LINE_TERMINATORS :
+                $options & ~\JSON_UNESCAPED_LINE_TERMINATORS;
         }
         if ($invalid_utf8_ignore !== null) {
             $options = $invalid_utf8_ignore ?
-                $options | JSON_INVALID_UTF8_IGNORE :
-                $options & ~JSON_INVALID_UTF8_IGNORE;
+                $options | \JSON_INVALID_UTF8_IGNORE :
+                $options & ~\JSON_INVALID_UTF8_IGNORE;
         }
         if ($invalid_utf8_substitute !== null) {
             $options = $invalid_utf8_substitute ?
-                $options | JSON_INVALID_UTF8_SUBSTITUTE :
-                $options & ~JSON_INVALID_UTF8_SUBSTITUTE;
+                $options | \JSON_INVALID_UTF8_SUBSTITUTE :
+                $options & ~\JSON_INVALID_UTF8_SUBSTITUTE;
         }
         if ($throw_on_error !== null) {
             $options = $throw_on_error ?
-                $options | JSON_THROW_ON_ERROR :
-                $options & ~JSON_THROW_ON_ERROR;
+                $options | \JSON_THROW_ON_ERROR :
+                $options & ~\JSON_THROW_ON_ERROR;
         }
         return new self($options);
     }
 
     public static function default(): self
     {
-        return new self(JSON_THROW_ON_ERROR | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        return new self(\JSON_THROW_ON_ERROR | \JSON_UNESCAPED_SLASHES | \JSON_UNESCAPED_UNICODE);
     }
 
     public static function pretty(): self
     {
-        return new self(JSON_THROW_ON_ERROR | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+        return new self(\JSON_THROW_ON_ERROR | \JSON_UNESCAPED_SLASHES | \JSON_UNESCAPED_UNICODE | \JSON_PRETTY_PRINT);
     }
 
     public function __construct(int $options)
@@ -232,49 +232,49 @@ final class EncodeOptions
     public function toString(): string
     {
         $constants = [];
-        if ($this->options & JSON_HEX_TAG) {
+        if ($this->options & \JSON_HEX_TAG) {
             $constants[] = 'JSON_HEX_TAG';
         }
-        if ($this->options & JSON_HEX_AMP) {
+        if ($this->options & \JSON_HEX_AMP) {
             $constants[] = 'JSON_HEX_AMP';
         }
-        if ($this->options & JSON_HEX_APOS) {
+        if ($this->options & \JSON_HEX_APOS) {
             $constants[] = 'JSON_HEX_APOS';
         }
-        if ($this->options & JSON_HEX_QUOT) {
+        if ($this->options & \JSON_HEX_QUOT) {
             $constants[] = 'JSON_HEX_QUOT';
         }
-        if ($this->options & JSON_FORCE_OBJECT) {
+        if ($this->options & \JSON_FORCE_OBJECT) {
             $constants[] = 'JSON_FORCE_OBJECT';
         }
-        if ($this->options & JSON_NUMERIC_CHECK) {
+        if ($this->options & \JSON_NUMERIC_CHECK) {
             $constants[] = 'JSON_NUMERIC_CHECK';
         }
-        if ($this->options & JSON_PRETTY_PRINT) {
+        if ($this->options & \JSON_PRETTY_PRINT) {
             $constants[] = 'JSON_PRETTY_PRINT';
         }
-        if ($this->options & JSON_UNESCAPED_SLASHES) {
+        if ($this->options & \JSON_UNESCAPED_SLASHES) {
             $constants[] = 'JSON_UNESCAPED_SLASHES';
         }
-        if ($this->options & JSON_UNESCAPED_UNICODE) {
+        if ($this->options & \JSON_UNESCAPED_UNICODE) {
             $constants[] = 'JSON_UNESCAPED_UNICODE';
         }
-        if ($this->options & JSON_PARTIAL_OUTPUT_ON_ERROR) {
+        if ($this->options & \JSON_PARTIAL_OUTPUT_ON_ERROR) {
             $constants[] = 'JSON_PARTIAL_OUTPUT_ON_ERROR';
         }
-        if ($this->options & JSON_PRESERVE_ZERO_FRACTION) {
+        if ($this->options & \JSON_PRESERVE_ZERO_FRACTION) {
             $constants[] = 'JSON_PRESERVE_ZERO_FRACTION';
         }
-        if ($this->options & JSON_UNESCAPED_LINE_TERMINATORS) {
+        if ($this->options & \JSON_UNESCAPED_LINE_TERMINATORS) {
             $constants[] = 'JSON_UNESCAPED_LINE_TERMINATORS';
         }
-        if ($this->options & JSON_INVALID_UTF8_IGNORE) {
+        if ($this->options & \JSON_INVALID_UTF8_IGNORE) {
             $constants[] = 'JSON_INVALID_UTF8_IGNORE';
         }
-        if ($this->options & JSON_INVALID_UTF8_SUBSTITUTE) {
+        if ($this->options & \JSON_INVALID_UTF8_SUBSTITUTE) {
             $constants[] = 'JSON_INVALID_UTF8_SUBSTITUTE';
         }
-        if ($this->options & JSON_THROW_ON_ERROR) {
+        if ($this->options & \JSON_THROW_ON_ERROR) {
             $constants[] = 'JSON_THROW_ON_ERROR';
         }
         return \implode(' | ', $constants);
@@ -282,151 +282,151 @@ final class EncodeOptions
 
     public function withHexTag(): self
     {
-        return new self($this->options | JSON_HEX_TAG);
+        return new self($this->options | \JSON_HEX_TAG);
     }
 
     public function withoutHexTag(): self
     {
-        return new self($this->options & ~JSON_HEX_TAG);
+        return new self($this->options & ~\JSON_HEX_TAG);
     }
 
     public function withHexAmp(): self
     {
-        return new self($this->options | JSON_HEX_AMP);
+        return new self($this->options | \JSON_HEX_AMP);
     }
 
     public function withoutHexAmp(): self
     {
-        return new self($this->options & ~JSON_HEX_AMP);
+        return new self($this->options & ~\JSON_HEX_AMP);
     }
 
     public function withHexApos(): self
     {
-        return new self($this->options | JSON_HEX_APOS);
+        return new self($this->options | \JSON_HEX_APOS);
     }
 
     public function withoutHexApos(): self
     {
-        return new self($this->options & ~JSON_HEX_APOS);
+        return new self($this->options & ~\JSON_HEX_APOS);
     }
 
     public function withHexQuot(): self
     {
-        return new self($this->options | JSON_HEX_QUOT);
+        return new self($this->options | \JSON_HEX_QUOT);
     }
 
     public function withoutHexQuot(): self
     {
-        return new self($this->options & ~JSON_HEX_QUOT);
+        return new self($this->options & ~\JSON_HEX_QUOT);
     }
 
     public function withForceObject(): self
     {
-        return new self($this->options | JSON_FORCE_OBJECT);
+        return new self($this->options | \JSON_FORCE_OBJECT);
     }
 
     public function withoutForceObject(): self
     {
-        return new self($this->options & ~JSON_FORCE_OBJECT);
+        return new self($this->options & ~\JSON_FORCE_OBJECT);
     }
 
     public function withNumericCheck(): self
     {
-        return new self($this->options | JSON_NUMERIC_CHECK);
+        return new self($this->options | \JSON_NUMERIC_CHECK);
     }
 
     public function withoutNumericCheck(): self
     {
-        return new self($this->options & ~JSON_NUMERIC_CHECK);
+        return new self($this->options & ~\JSON_NUMERIC_CHECK);
     }
 
     public function withPrettyPrint(): self
     {
-        return new self($this->options | JSON_PRETTY_PRINT);
+        return new self($this->options | \JSON_PRETTY_PRINT);
     }
 
     public function withoutPrettyPrint(): self
     {
-        return new self($this->options & ~JSON_PRETTY_PRINT);
+        return new self($this->options & ~\JSON_PRETTY_PRINT);
     }
 
     public function withUnescapedSlashes(): self
     {
-        return new self($this->options | JSON_UNESCAPED_SLASHES);
+        return new self($this->options | \JSON_UNESCAPED_SLASHES);
     }
 
     public function withoutUnescapedSlashes(): self
     {
-        return new self($this->options & ~JSON_UNESCAPED_SLASHES);
+        return new self($this->options & ~\JSON_UNESCAPED_SLASHES);
     }
 
     public function withUnescapedUnicode(): self
     {
-        return new self($this->options | JSON_UNESCAPED_UNICODE);
+        return new self($this->options | \JSON_UNESCAPED_UNICODE);
     }
 
     public function withoutUnescapedUnicode(): self
     {
-        return new self($this->options & ~JSON_UNESCAPED_UNICODE);
+        return new self($this->options & ~\JSON_UNESCAPED_UNICODE);
     }
 
     public function withPartialOutputOnError(): self
     {
-        return new self($this->options | JSON_PARTIAL_OUTPUT_ON_ERROR);
+        return new self($this->options | \JSON_PARTIAL_OUTPUT_ON_ERROR);
     }
 
     public function withoutPartialOutputOnError(): self
     {
-        return new self($this->options & ~JSON_PARTIAL_OUTPUT_ON_ERROR);
+        return new self($this->options & ~\JSON_PARTIAL_OUTPUT_ON_ERROR);
     }
 
     public function withPreserveZeroFraction(): self
     {
-        return new self($this->options | JSON_PRESERVE_ZERO_FRACTION);
+        return new self($this->options | \JSON_PRESERVE_ZERO_FRACTION);
     }
 
     public function withoutPreserveZeroFraction(): self
     {
-        return new self($this->options & ~JSON_PRESERVE_ZERO_FRACTION);
+        return new self($this->options & ~\JSON_PRESERVE_ZERO_FRACTION);
     }
 
     public function withUnescapedLineTerminators(): self
     {
-        return new self($this->options | JSON_UNESCAPED_LINE_TERMINATORS);
+        return new self($this->options | \JSON_UNESCAPED_LINE_TERMINATORS);
     }
 
     public function withoutUnescapedLineTerminators(): self
     {
-        return new self($this->options & ~JSON_UNESCAPED_LINE_TERMINATORS);
+        return new self($this->options & ~\JSON_UNESCAPED_LINE_TERMINATORS);
     }
 
     public function withInvalidUtf8Ignore(): self
     {
-        return new self($this->options | JSON_INVALID_UTF8_IGNORE);
+        return new self($this->options | \JSON_INVALID_UTF8_IGNORE);
     }
 
     public function withoutInvalidUtf8Ignore(): self
     {
-        return new self($this->options & ~JSON_INVALID_UTF8_IGNORE);
+        return new self($this->options & ~\JSON_INVALID_UTF8_IGNORE);
     }
 
     public function withInvalidUtf8Substitute(): self
     {
-        return new self($this->options | JSON_INVALID_UTF8_SUBSTITUTE);
+        return new self($this->options | \JSON_INVALID_UTF8_SUBSTITUTE);
     }
 
     public function withoutInvalidUtf8Substitute(): self
     {
-        return new self($this->options & ~JSON_INVALID_UTF8_SUBSTITUTE);
+        return new self($this->options & ~\JSON_INVALID_UTF8_SUBSTITUTE);
     }
 
     public function withThrowOnError(): self
     {
-        return new self($this->options | JSON_THROW_ON_ERROR);
+        return new self($this->options | \JSON_THROW_ON_ERROR);
     }
 
     public function withoutThrowOnError(): self
     {
-        return new self($this->options & ~JSON_THROW_ON_ERROR);
+        return new self($this->options & ~\JSON_THROW_ON_ERROR);
     }
 }

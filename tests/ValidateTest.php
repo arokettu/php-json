@@ -26,6 +26,6 @@ class ValidateTest extends TestCase
 
     public function testInvalidUnicodeIgnore(): void
     {
-        self::assertTrue(Json::validate("{\"aaa\": 123, \"bbb\": \"\x80\"}", JSON_INVALID_UTF8_IGNORE));
+        self::assertTrue(Json::validate("{\"aaa\": 123, \"bbb\": \"\x80\"}", \JSON_INVALID_UTF8_IGNORE));
     }
 }

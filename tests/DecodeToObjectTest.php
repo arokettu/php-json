@@ -14,7 +14,7 @@ class DecodeToObjectTest extends TestCase
         // get object when not passing param
         $this->assertInstanceOf(\ArrayObject::class, Json::decode('{}'));
         // get object with decodeToObject even with param
-        $this->assertInstanceOf(\ArrayObject::class, Json::decodeToObject('{}', JSON_OBJECT_AS_ARRAY));
+        $this->assertInstanceOf(\ArrayObject::class, Json::decodeToObject('{}', \JSON_OBJECT_AS_ARRAY));
     }
 
     public function testScalar(): void
@@ -59,7 +59,7 @@ class DecodeToObjectTest extends TestCase
 
     public function testAssocIgnored(): void
     {
-        $obj = Json::decodeToObject('{"aaa": 123, "bbb": "abc"}', JSON_OBJECT_AS_ARRAY);
+        $obj = Json::decodeToObject('{"aaa": 123, "bbb": "abc"}', \JSON_OBJECT_AS_ARRAY);
 
         $this->assertInstanceOf(\ArrayObject::class, $obj);
     }
