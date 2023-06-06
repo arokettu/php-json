@@ -127,7 +127,7 @@ final class DecodeOptions
         if ($this->options & \JSON_THROW_ON_ERROR) {
             $constants[] = 'JSON_THROW_ON_ERROR';
         }
-        return \implode(' | ', $constants);
+        return $constants === [] ? '0' : \implode(' | ', $constants);
     }
 
     public function withBigintAsString(): self
