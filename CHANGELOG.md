@@ -7,7 +7,7 @@
 * Using wrong type for options now generates `TypeError` instead of `InvalidArgumentException`
 * Added `ValidateOptions`
 * Added `Json::validate()` for `json_validate` that falls back to the Symfony's polyfill implementation
-* Fixed `*Options->toString()` returning empty string for no options instead of '0'
+* Fixed `*Options->toString()` returning empty string for no options instead of `'0'`
 
 ## 1.3.0
 
