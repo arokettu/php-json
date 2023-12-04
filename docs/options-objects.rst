@@ -50,17 +50,14 @@ Preset constructors
 Builder constructor
 -------------------
 
+.. versionchanged:: 2.0 removed camel-case parameter versions
+
 .. code-block:: php
 
     <?php
 
     public static function \Arokettu\Json\DecodeOptions::build(
         int $options = 0,
-        ?bool $bigintAsString = null,
-        ?bool $objectAsArray = null,
-        ?bool $invalidUtf8Ignore = null,
-        ?bool $invalidUtf8Substitute = null,
-        ?bool $throwOnError = null,
         ?bool $bigint_as_string = null,
         ?bool $object_as_array = null,
         ?bool $invalid_utf8_ignore = null,
@@ -70,21 +67,6 @@ Builder constructor
 
     public static function \Arokettu\Json\EncodeOptions::build(
         int $options = 0,
-        ?bool $hexTag = null,
-        ?bool $hexAmp = null,
-        ?bool $hexApos = null,
-        ?bool $hexQuot = null,
-        ?bool $forceObject = null,
-        ?bool $numericCheck = null,
-        ?bool $prettyPrint = null,
-        ?bool $unescapedSlashes = null,
-        ?bool $unescapedUnicode = null,
-        ?bool $partialOutputOnError = null,
-        ?bool $preserveZeroFraction = null,
-        ?bool $unescapedLineTerminators = null,
-        ?bool $invalidUtf8Ignore = null,
-        ?bool $invalidUtf8Substitute = null,
-        ?bool $throwOnError = null,
         ?bool $hex_tag = null,
         ?bool $hex_amp = null,
         ?bool $hex_apos = null,
@@ -104,7 +86,6 @@ Builder constructor
 
     public static function \Arokettu\Json\ValidateOptions::build(
         int $options = 0,
-        ?bool $invalidUtf8Ignore = null,
         ?bool $invalid_utf8_ignore = null
     ): \Arokettu\Json\ValidateOptions
 
@@ -117,9 +98,9 @@ Params exist in both snake case and camel case forms for your preference.
 
     // PHP 8 example
     $options = \Arokettu\Json\EncodeOptions::build(
-        throwOnError: true,
-        unescapedSlashes: true,
-        unescapedUnicode: true,
+        throw_on_error: true,
+        unescaped_slashes: true,
+        unescaped_unicode: true,
     );
 
     // PHP DI example
@@ -132,7 +113,7 @@ Params exist in both snake case and camel case forms for your preference.
     // Initialize options with existing options set to modify it
     $options = \Arokettu\Json\EncodeOptions::build(
         JSON_THROW_ON_ERROR | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE,
-        throwOnError: false,
+        throw_on_error: false,
     );
 
 Managing options in OOP way

@@ -42,10 +42,10 @@ use Arokettu\Json\EncodeOptions;
 $options = EncodeOptions::build()
     ->withThrowOnError()
     ->withHexAmp();
-// set options with PHP 8 named params (both camel case and snake case names can be used)
+// set options with PHP 8 named params
 $options = EncodeOptions::build(
     throw_on_error: true,   // apply JSON_THROW_ON_ERROR 
-    hexAmp: true,           // apply JSON_HEX_AMP 
+    hex_amp: true,          // apply JSON_HEX_AMP 
 );
 // use both with this library and with the base function
 $value = \Arokettu\Json\Json::encode($json, $options);
