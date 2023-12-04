@@ -14,19 +14,15 @@ final class Json
     public const VALIDATE_DEFAULT = 0;
 
     /**
-     * @param mixed $value
-     * @param int|EncodeOptions $options
-     * @param int $depth
-     * @return string
      * @throws \JsonException
      */
-    public static function encode($value, $options = self::ENCODE_DEFAULT, int $depth = 512): string
-    {
+    public static function encode(
+        mixed $value,
+        int|EncodeOptions $options = self::ENCODE_DEFAULT,
+        int $depth = 512
+    ): string {
         if ($options instanceof EncodeOptions) {
             $options = $options->value();
-        }
-        if (!\is_int($options)) {
-            throw new \TypeError('$options must be an integer or an instance of EncodeOptions');
         }
 
         $options |= \JSON_THROW_ON_ERROR; // force throwing exceptions
@@ -35,19 +31,15 @@ final class Json
     }
 
     /**
-     * @param string $json
-     * @param int|DecodeOptions $options
-     * @param int $depth
-     * @return mixed
      * @throws \JsonException
      */
-    public static function decode(string $json, $options = self::DECODE_DEFAULT, int $depth = 512)
-    {
+    public static function decode(
+        string $json,
+        int|DecodeOptions $options = self::DECODE_DEFAULT,
+        int $depth = 512,
+    ): mixed {
         if ($options instanceof DecodeOptions) {
             $options = $options->value();
-        }
-        if (!\is_int($options)) {
-            throw new \TypeError('$options must be an integer or an instance of DecodeOptions');
         }
 
         return $options & \JSON_OBJECT_AS_ARRAY ?
@@ -56,19 +48,15 @@ final class Json
     }
 
     /**
-     * @param string $json
-     * @param int|DecodeOptions $options
-     * @param int $depth
-     * @return mixed
      * @throws \JsonException
      */
-    public static function decodeToObject(string $json, $options = self::DECODE_DEFAULT, int $depth = 512)
-    {
+    public static function decodeToObject(
+        string $json,
+        int|DecodeOptions $options = self::DECODE_DEFAULT,
+        int $depth = 512,
+    ): mixed {
         if ($options instanceof DecodeOptions) {
             $options = $options->value();
-        }
-        if (!\is_int($options)) {
-            throw new \TypeError('$options must be an integer or an instance of DecodeOptions');
         }
 
         $options |= \JSON_THROW_ON_ERROR;    // force throwing exceptions
@@ -84,19 +72,15 @@ final class Json
     }
 
     /**
-     * @param string $json
-     * @param int|DecodeOptions $options
-     * @param int $depth
-     * @return mixed
      * @throws \JsonException
      */
-    public static function decodeToArray(string $json, $options = self::DECODE_DEFAULT, int $depth = 512)
-    {
+    public static function decodeToArray(
+        string $json,
+        int|DecodeOptions $options = self::DECODE_DEFAULT,
+        int $depth = 512
+    ): mixed {
         if ($options instanceof DecodeOptions) {
             $options = $options->value();
-        }
-        if (!\is_int($options)) {
-            throw new \TypeError('$options must be an integer or an instance of DecodeOptions');
         }
 
         $options |= \JSON_THROW_ON_ERROR;    // force throwing exceptions
@@ -105,11 +89,7 @@ final class Json
         return \json_decode($json, null, $depth, $options);
     }
 
-    /**
-     * @param mixed $value
-     * @return mixed
-     */
-    private static function objectToArrayObject($value)
+    private static function objectToArrayObject(mixed $value): mixed
     {
         if ($value instanceof \stdClass) {
             $value = new \ArrayObject(\get_object_vars($value), \ArrayObject::ARRAY_AS_PROPS);
@@ -124,19 +104,13 @@ final class Json
         return $value;
     }
 
-    /**
-     * @param string $json
-     * @param int|ValidateOptions $options
-     * @param int $depth
-     * @return bool
-     */
-    public static function validate(string $json, $options = self::VALIDATE_DEFAULT, int $depth = 512): bool
-    {
+    public static function validate(
+        string $json,
+        int|ValidateOptions $options = self::VALIDATE_DEFAULT,
+        int $depth = 512,
+    ): bool {
         if ($options instanceof ValidateOptions) {
             $options = $options->value();
-        }
-        if (!\is_int($options)) {
-            throw new \TypeError('$options must be an integer or an instance of ValidateOptions');
         }
 
         return \json_validate($json, $depth, $options);
