@@ -83,11 +83,15 @@ Post-processor
 .. versionadded:: 2.0 Exposed to public
 
 If you have a library that does json decoding internally
-and you just want to post-process its output from stdClass to ArrayObject::
+and you just want to post-process its output from stdClass to ArrayObject or array::
 
     <?php
 
     function \Arokettu\Json\Json::stdClassToArrayObject(
+        mixed $value,
+    ): mixed;
+
+    function \Arokettu\Json\Json::stdClassToArray(
         mixed $value,
     ): mixed;
 
