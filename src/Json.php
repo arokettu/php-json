@@ -65,7 +65,7 @@ final class Json
         $decoded = \json_decode($json, null, $depth, $options);
 
         if (\is_array($decoded) || \is_object($decoded)) {
-            $decoded = self::objectToArrayObject($decoded);
+            $decoded = self::recursiveStdClassToArrayObject($decoded);
         }
 
         return $decoded;
@@ -89,7 +89,7 @@ final class Json
         return \json_decode($json, null, $depth, $options);
     }
 
-    private static function objectToArrayObject(mixed $value): mixed
+    public static function recursiveStdClassToArrayObject(mixed $value): mixed
     {
         if ($value instanceof \stdClass) {
             $value = new \ArrayObject(\get_object_vars($value), \ArrayObject::ARRAY_AS_PROPS);
@@ -97,7 +97,7 @@ final class Json
 
         foreach ($value as &$v) {
             if (\is_array($v) || $v instanceof \stdClass) {
-                $v = self::objectToArrayObject($v);
+                $v = self::recursiveStdClassToArrayObject($v);
             }
         }
 
