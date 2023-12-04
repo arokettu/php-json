@@ -13,3 +13,6 @@
 # composer
 /vendor/
 /composer.lock
+
+# misc
+/debug
