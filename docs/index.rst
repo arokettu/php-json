@@ -19,6 +19,7 @@ Documentation
 
     json-wrapper
     options-objects
+    upgrade
 
 License
 =======
