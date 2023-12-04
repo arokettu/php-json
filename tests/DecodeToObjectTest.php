@@ -88,4 +88,10 @@ class DecodeToObjectTest extends TestCase
         $this->assertInstanceOf(\ArrayObject::class, $decoded[0]['abc'][1]);
         $this->assertEquals(123, $decoded[0]['abc'][1]['xyz']);
     }
+
+    public function testPostprocessScalar(): void
+    {
+        self::assertEquals(123, Json::stdClassToArrayObject(123));
+        self::assertEquals('123', Json::stdClassToArrayObject('123'));
+    }
 }

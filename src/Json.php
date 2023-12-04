@@ -107,6 +107,10 @@ final class Json
             $value = new \ArrayObject(\get_object_vars($value), \ArrayObject::ARRAY_AS_PROPS);
         }
 
+        if (!\is_array($value) && !($value instanceof \ArrayObject)) {
+            return $value;
+        }
+
         foreach ($value as &$v) {
             if (\is_array($v) || $v instanceof \stdClass) {
                 $v = self::stdClassToArrayObject($v);
