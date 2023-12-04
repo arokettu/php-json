@@ -89,6 +89,18 @@ final class Json
         return \json_decode($json, null, $depth, $options);
     }
 
+    public static function validate(
+        string $json,
+        int|ValidateOptions $options = self::VALIDATE_DEFAULT,
+        int $depth = 512,
+    ): bool {
+        if ($options instanceof ValidateOptions) {
+            $options = $options->value();
+        }
+
+        return \json_validate($json, $depth, $options);
+    }
+
     public static function recursiveStdClassToArrayObject(mixed $value): mixed
     {
         if ($value instanceof \stdClass) {
@@ -102,17 +114,5 @@ final class Json
         }
 
         return $value;
-    }
-
-    public static function validate(
-        string $json,
-        int|ValidateOptions $options = self::VALIDATE_DEFAULT,
-        int $depth = 512,
-    ): bool {
-        if ($options instanceof ValidateOptions) {
-            $options = $options->value();
-        }
-
-        return \json_validate($json, $depth, $options);
     }
 }
