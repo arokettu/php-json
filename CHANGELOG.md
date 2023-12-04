@@ -8,6 +8,7 @@
 
 Forked from 1.4.0
 
+* PHP 8.0 is required
 * Removed camel case arguments to `build()` methods
 * Exposed `stdClassToArrayObject()` to public
 
