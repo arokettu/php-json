@@ -13,10 +13,11 @@ namespace Arokettu\Json;
 
 /**
  * @generated
+ * @immutable
  */
 final class ValidateOptions
 {
-    private $options;
+    private int $options;
 
     public static function build(
         int $options = 0,

@@ -13,10 +13,11 @@ namespace Arokettu\Json;
 
 /**
  * @generated
+ * @immutable
  */
 final class DecodeOptions
 {
-    private $options;
+    private int $options;
 
     public static function build(
         int $options = 0,

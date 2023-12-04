@@ -11,6 +11,7 @@ use Laminas\Code\Generator\FileGenerator;
 use Laminas\Code\Generator\MethodGenerator;
 use Laminas\Code\Generator\ParameterGenerator;
 use Laminas\Code\Generator\PropertyGenerator;
+use Laminas\Code\Generator\TypeGenerator;
 
 use function Symfony\Component\String\s;
 
@@ -85,6 +86,7 @@ foreach ($config as $classname => $options) {
     $class = new ClassGenerator($classname, 'Arokettu\\Json', ClassGenerator::FLAG_FINAL);
     $class->setDocBlock(new DocBlockGenerator(null, null, [
         new GenericTag('generated'),
+        new GenericTag('immutable'),
     ]));
 
     $buildParamsSnake = [];
@@ -164,7 +166,12 @@ foreach ($config as $classname => $options) {
 
     $class->addMethodFromGenerator($constructor);
     $class->addPropertyFromGenerator(
-        (new PropertyGenerator('options', null, PropertyGenerator::FLAG_PRIVATE))->omitDefaultValue()
+        (new PropertyGenerator(
+            'options',
+            null,
+            PropertyGenerator::FLAG_PRIVATE,
+            TypeGenerator::fromTypeString('int'))
+        )->omitDefaultValue()
     );
 
     // value() & toInt()
