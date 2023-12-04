@@ -103,17 +103,25 @@ final class Json
 
     public static function stdClassToArrayObject(mixed $value): mixed
     {
-        if ($value instanceof \stdClass) {
-            $value = new \ArrayObject(\get_object_vars($value), \ArrayObject::ARRAY_AS_PROPS);
+        if (!\is_array($value) && !($value instanceof \stdClass)) {
+            return $value;
         }
 
-        if (!\is_array($value) && !($value instanceof \ArrayObject)) {
-            return $value;
+        return self::convertStdClass($value, true);
+    }
+
+    private static function convertStdClass(mixed $value, bool $toArrayObject): mixed
+    {
+        if ($value instanceof \stdClass) {
+            $value = \get_object_vars($value); // to array
+            if ($toArrayObject) {
+                $value = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
+            }
         }
 
         foreach ($value as &$v) {
             if (\is_array($v) || $v instanceof \stdClass) {
-                $v = self::stdClassToArrayObject($v);
+                $v = self::convertStdClass($v, $toArrayObject);
             }
         }
 
