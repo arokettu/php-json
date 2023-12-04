@@ -35,15 +35,15 @@
         }
     },
     "require": {
-        "php": "^7.3 | ^8.0",
+        "php": "^8.0",
         "ext-json": "*",
         "symfony/polyfill-php83": "^1.27"
     },
     "require-dev": {
-        "laminas/laminas-code": "^3.5 | ^4.0",
-        "phpunit/phpunit": "^9.3",
+        "laminas/laminas-code": "^4.7.1",
+        "phpunit/phpunit": "^9.6.15",
         "psy/psysh": "*",
-        "sandfox.dev/code-standard": "^1",
+        "sandfox.dev/code-standard": "^1.2023.06.29",
         "squizlabs/php_codesniffer": "*"
     }
 }
