@@ -65,7 +65,7 @@ final class Json
         $decoded = \json_decode($json, null, $depth, $options);
 
         if (\is_array($decoded) || \is_object($decoded)) {
-            $decoded = self::stdClassToArrayObject($decoded);
+            $decoded = self::convertStdClass($decoded, true);
         }
 
         return $decoded;
@@ -108,6 +108,15 @@ final class Json
         }
 
         return self::convertStdClass($value, true);
+    }
+
+    public static function stdClassToArray(mixed $value): mixed
+    {
+        if (!\is_array($value) && !($value instanceof \stdClass)) {
+            return $value;
+        }
+
+        return self::convertStdClass($value, false);
     }
 
     private static function convertStdClass(mixed $value, bool $toArrayObject): mixed
