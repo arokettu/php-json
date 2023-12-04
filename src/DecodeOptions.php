@@ -20,42 +20,12 @@ final class DecodeOptions
 
     public static function build(
         int $options = 0,
-        ?bool $bigintAsString = null,
-        ?bool $objectAsArray = null,
-        ?bool $invalidUtf8Ignore = null,
-        ?bool $invalidUtf8Substitute = null,
-        ?bool $throwOnError = null,
         ?bool $bigint_as_string = null,
         ?bool $object_as_array = null,
         ?bool $invalid_utf8_ignore = null,
         ?bool $invalid_utf8_substitute = null,
         ?bool $throw_on_error = null
     ): self {
-        if ($bigintAsString !== null) {
-            $options = $bigintAsString ?
-                $options | \JSON_BIGINT_AS_STRING :
-                $options & ~\JSON_BIGINT_AS_STRING;
-        }
-        if ($objectAsArray !== null) {
-            $options = $objectAsArray ?
-                $options | \JSON_OBJECT_AS_ARRAY :
-                $options & ~\JSON_OBJECT_AS_ARRAY;
-        }
-        if ($invalidUtf8Ignore !== null) {
-            $options = $invalidUtf8Ignore ?
-                $options | \JSON_INVALID_UTF8_IGNORE :
-                $options & ~\JSON_INVALID_UTF8_IGNORE;
-        }
-        if ($invalidUtf8Substitute !== null) {
-            $options = $invalidUtf8Substitute ?
-                $options | \JSON_INVALID_UTF8_SUBSTITUTE :
-                $options & ~\JSON_INVALID_UTF8_SUBSTITUTE;
-        }
-        if ($throwOnError !== null) {
-            $options = $throwOnError ?
-                $options | \JSON_THROW_ON_ERROR :
-                $options & ~\JSON_THROW_ON_ERROR;
-        }
         if ($bigint_as_string !== null) {
             $options = $bigint_as_string ?
                 $options | \JSON_BIGINT_AS_STRING :

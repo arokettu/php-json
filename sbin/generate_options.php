@@ -88,7 +88,6 @@ foreach ($config as $classname => $options) {
     ]));
 
     $buildParamsSnake = [];
-    $buildParamsCamel = [];
     $methods = [];
 
     foreach ($options['constants'] as $constant) {
@@ -97,7 +96,6 @@ foreach ($config as $classname => $options) {
         $pascalName = ucfirst($camelName);
 
         $buildParamsSnake[$snakeName] = $constant;
-        $buildParamsCamel[$camelName] = $constant;
 
         $with = new MethodGenerator('with' . $pascalName);
         $with->setBody(<<<PHP
@@ -118,7 +116,7 @@ foreach ($config as $classname => $options) {
 
     // build()
 
-    $buildParams = $buildParamsCamel + $buildParamsSnake;
+    $buildParams = $buildParamsSnake;
 
     $build = new MethodGenerator('build');
     $build->setStatic(true);

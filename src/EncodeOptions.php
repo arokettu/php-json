@@ -20,21 +20,6 @@ final class EncodeOptions
 
     public static function build(
         int $options = 0,
-        ?bool $hexTag = null,
-        ?bool $hexAmp = null,
-        ?bool $hexApos = null,
-        ?bool $hexQuot = null,
-        ?bool $forceObject = null,
-        ?bool $numericCheck = null,
-        ?bool $prettyPrint = null,
-        ?bool $unescapedSlashes = null,
-        ?bool $unescapedUnicode = null,
-        ?bool $partialOutputOnError = null,
-        ?bool $preserveZeroFraction = null,
-        ?bool $unescapedLineTerminators = null,
-        ?bool $invalidUtf8Ignore = null,
-        ?bool $invalidUtf8Substitute = null,
-        ?bool $throwOnError = null,
         ?bool $hex_tag = null,
         ?bool $hex_amp = null,
         ?bool $hex_apos = null,
@@ -51,81 +36,6 @@ final class EncodeOptions
         ?bool $invalid_utf8_substitute = null,
         ?bool $throw_on_error = null
     ): self {
-        if ($hexTag !== null) {
-            $options = $hexTag ?
-                $options | \JSON_HEX_TAG :
-                $options & ~\JSON_HEX_TAG;
-        }
-        if ($hexAmp !== null) {
-            $options = $hexAmp ?
-                $options | \JSON_HEX_AMP :
-                $options & ~\JSON_HEX_AMP;
-        }
-        if ($hexApos !== null) {
-            $options = $hexApos ?
-                $options | \JSON_HEX_APOS :
-                $options & ~\JSON_HEX_APOS;
-        }
-        if ($hexQuot !== null) {
-            $options = $hexQuot ?
-                $options | \JSON_HEX_QUOT :
-                $options & ~\JSON_HEX_QUOT;
-        }
-        if ($forceObject !== null) {
-            $options = $forceObject ?
-                $options | \JSON_FORCE_OBJECT :
-                $options & ~\JSON_FORCE_OBJECT;
-        }
-        if ($numericCheck !== null) {
-            $options = $numericCheck ?
-                $options | \JSON_NUMERIC_CHECK :
-                $options & ~\JSON_NUMERIC_CHECK;
-        }
-        if ($prettyPrint !== null) {
-            $options = $prettyPrint ?
-                $options | \JSON_PRETTY_PRINT :
-                $options & ~\JSON_PRETTY_PRINT;
-        }
-        if ($unescapedSlashes !== null) {
-            $options = $unescapedSlashes ?
-                $options | \JSON_UNESCAPED_SLASHES :
-                $options & ~\JSON_UNESCAPED_SLASHES;
-        }
-        if ($unescapedUnicode !== null) {
-            $options = $unescapedUnicode ?
-                $options | \JSON_UNESCAPED_UNICODE :
-                $options & ~\JSON_UNESCAPED_UNICODE;
-        }
-        if ($partialOutputOnError !== null) {
-            $options = $partialOutputOnError ?
-                $options | \JSON_PARTIAL_OUTPUT_ON_ERROR :
-                $options & ~\JSON_PARTIAL_OUTPUT_ON_ERROR;
-        }
-        if ($preserveZeroFraction !== null) {
-            $options = $preserveZeroFraction ?
-                $options | \JSON_PRESERVE_ZERO_FRACTION :
-                $options & ~\JSON_PRESERVE_ZERO_FRACTION;
-        }
-        if ($unescapedLineTerminators !== null) {
-            $options = $unescapedLineTerminators ?
-                $options | \JSON_UNESCAPED_LINE_TERMINATORS :
-                $options & ~\JSON_UNESCAPED_LINE_TERMINATORS;
-        }
-        if ($invalidUtf8Ignore !== null) {
-            $options = $invalidUtf8Ignore ?
-                $options | \JSON_INVALID_UTF8_IGNORE :
-                $options & ~\JSON_INVALID_UTF8_IGNORE;
-        }
-        if ($invalidUtf8Substitute !== null) {
-            $options = $invalidUtf8Substitute ?
-                $options | \JSON_INVALID_UTF8_SUBSTITUTE :
-                $options & ~\JSON_INVALID_UTF8_SUBSTITUTE;
-        }
-        if ($throwOnError !== null) {
-            $options = $throwOnError ?
-                $options | \JSON_THROW_ON_ERROR :
-                $options & ~\JSON_THROW_ON_ERROR;
-        }
         if ($hex_tag !== null) {
             $options = $hex_tag ?
                 $options | \JSON_HEX_TAG :

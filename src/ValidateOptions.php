@@ -20,14 +20,8 @@ final class ValidateOptions
 
     public static function build(
         int $options = 0,
-        ?bool $invalidUtf8Ignore = null,
         ?bool $invalid_utf8_ignore = null
     ): self {
-        if ($invalidUtf8Ignore !== null) {
-            $options = $invalidUtf8Ignore ?
-                $options | \JSON_INVALID_UTF8_IGNORE :
-                $options & ~\JSON_INVALID_UTF8_IGNORE;
-        }
         if ($invalid_utf8_ignore !== null) {
             $options = $invalid_utf8_ignore ?
                 $options | \JSON_INVALID_UTF8_IGNORE :
