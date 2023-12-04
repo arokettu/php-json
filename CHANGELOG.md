@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.x
+
+### 2.0.0
+
+*Dec 4, 2023*
+
+Forked from 1.4.0
+
+* Removed camel case arguments to `build()` methods
+* Exposed `stdClassToArrayObject()` to public
+
 ## 1.x
 
 ### 1.4.0
