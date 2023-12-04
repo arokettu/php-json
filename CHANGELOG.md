@@ -2,6 +2,12 @@
 
 ## 2.x
 
+### 2.1.0
+
+*Dec 4, 2023*
+
+* Added `stdClassToArray()`
+
 ### 2.0.0
 
 *Dec 4, 2023*
