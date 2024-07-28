@@ -7,6 +7,12 @@
 
 A wrapper for the standard ext-json with sane defaults
 
+## Installation
+
+```sh 
+composer require 'arokettu/json'
+```
+
 ## Features
 
 ### Decoding wrapper
@@ -53,12 +59,6 @@ $value = json_encode($json, $options->value());
 // pretty print existing options mix
 echo EncodeOptions::build(4194752)->toString();
 // will get you 'JSON_THROW_ON_ERROR | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT'
-```
-
-## Installation
-
-```sh 
-composer require 'arokettu/json'
 ```
 
 ## Documentation
