@@ -90,7 +90,6 @@ Builder constructor
     ): \Arokettu\Json\ValidateOptions
 
 The builder constructor is made with named parameters in mind.
-Params exist in both snake case and camel case forms for your preference.
 
 .. code-block:: php
 
