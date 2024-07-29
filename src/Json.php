@@ -122,10 +122,9 @@ final class Json
     private static function convertStdClass(mixed $value, bool $toArrayObject): mixed
     {
         if ($value instanceof \stdClass) {
-            $value = \get_object_vars($value); // to array
-            if ($toArrayObject) {
-                $value = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
-            }
+            $value = $toArrayObject ?
+                new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS) :
+                \get_object_vars($value);
         }
 
         foreach ($value as &$v) {
