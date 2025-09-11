@@ -10,7 +10,7 @@ use Arokettu\Json\Json;
 use Arokettu\Json\ValidateOptions;
 use PHPUnit\Framework\TestCase;
 
-class OptionsAsObjectTest extends TestCase
+final class OptionsAsObjectTest extends TestCase
 {
     public function testPassEncodeOptions(): void
     {

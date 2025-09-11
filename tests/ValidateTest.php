@@ -7,7 +7,7 @@ namespace Arokettu\Json\Tests;
 use Arokettu\Json\Json;
 use PHPUnit\Framework\TestCase;
 
-class ValidateTest extends TestCase
+final class ValidateTest extends TestCase
 {
     public function testValid(): void
     {

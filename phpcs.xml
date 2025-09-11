@@ -2,8 +2,8 @@
 <!--
     @see https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-Ruleset
 -->
-<ruleset name="Custom Standard" namespace="MyProject\CS\Standard">
-    <rule ref="SandFox_PHP73"/>
+<ruleset>
+    <rule ref="SandFox_PHP80"/>
     <rule ref="SlevomatCodingStandard.Namespaces.FullyQualifiedGlobalFunctions">
         <properties>
             <!-- Reset to default (include all functions) -->

@@ -19,7 +19,7 @@ final class Json
     public static function encode(
         mixed $value,
         int|EncodeOptions $options = self::ENCODE_DEFAULT,
-        int $depth = 512
+        int $depth = 512,
     ): string {
         if ($options instanceof EncodeOptions) {
             $options = $options->value();
@@ -77,7 +77,7 @@ final class Json
     public static function decodeToArray(
         string $json,
         int|DecodeOptions $options = self::DECODE_DEFAULT,
-        int $depth = 512
+        int $depth = 512,
     ): mixed {
         if ($options instanceof DecodeOptions) {
             $options = $options->value();

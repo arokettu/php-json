@@ -7,7 +7,7 @@ namespace Arokettu\Json\Tests;
 use Arokettu\Json\Json;
 use PHPUnit\Framework\TestCase;
 
-class DecodeToObjectTest extends TestCase
+final class DecodeToObjectTest extends TestCase
 {
     public function testParams(): void
     {
@@ -27,7 +27,7 @@ class DecodeToObjectTest extends TestCase
 
     public function testArray(): void
     {
-        $this->assertEquals([1, 2, 3, "4"], Json::decodeToObject('[1,2,3,"4"]'));
+        $this->assertEquals([1, 2, 3, '4'], Json::decodeToObject('[1,2,3,"4"]'));
     }
 
     public function testObject(): void

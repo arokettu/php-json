@@ -7,7 +7,7 @@ namespace Arokettu\Json\Tests;
 use Arokettu\Json\Json;
 use PHPUnit\Framework\TestCase;
 
-class EncodeTest extends TestCase
+final class EncodeTest extends TestCase
 {
     public function testException(): void
     {

@@ -7,7 +7,7 @@ namespace Arokettu\Json\Tests;
 use Arokettu\Json\Json;
 use PHPUnit\Framework\TestCase;
 
-class DecodePostprocessorTest extends TestCase
+final class DecodePostprocessorTest extends TestCase
 {
     public function testScalar(): void
     {
