@@ -1,6 +1,11 @@
 #!/usr/bin/env php
 <?php
 
+/**
+ * @copyright 2020 Anton Smirnov
+ * @license MIT https://spdx.org/licenses/MIT.html
+ */
+
 declare(strict_types=1);
 
 use Laminas\Code\DeclareStatement;
